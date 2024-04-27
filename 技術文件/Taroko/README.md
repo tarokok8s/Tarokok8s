@@ -26,3 +26,4 @@ Talos 叢集中，Endpoints 負責與客戶端溝通，他可以是 DNS 主機�
 當客戶端對特定的 nodes(Controlplane 或是 worker)發送請求時，其中一台 Endpoint 將會自動將其代理至目標 nodes 上，同時如果有複數台 Endpoints，會由客戶端選擇其中一台，已次來達成高可用性。 
 ![image](https://github.com/tarokok8s/Tarokok8s/assets/62133915/b05f65d5-4567-4bbe-aee6-12223753b914)
 
+[返回首頁](https://github.com/tarokok8s/Tarokok8s)
