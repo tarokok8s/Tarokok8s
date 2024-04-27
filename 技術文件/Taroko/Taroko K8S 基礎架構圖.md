@@ -15,3 +15,6 @@
 | Server CPU | Server RAM | 
 | -------- | -------- | 
 | 8+ Core     | 32 GB     | 
+
+
+[返回首頁](https://github.com/tarokok8s/Tarokok8s)
