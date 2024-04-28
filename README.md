@@ -16,6 +16,12 @@ Taroko Kubernetes 是一個完全開源的系統用來管理跨多個主機的�
 
 ### 1.2. 組成
 
+- 預設總共會有 4 台 VM，一台扮演 Talos 外部管理主機，另外 3 台 VM 會組成 Talos Kubernetes Cluster。
+
+[閱讀更多詳細資訊](https://github.com/tarokok8s/Tarokok8s/blob/5090dea47b5d76cc2bff134915ce52507fe86fd8/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%9F%BA%E7%A4%8E%E6%9E%B6%E6%A7%8B%E5%9C%96.md)
+
+### 1.3. 功能類型
+
 #### Default
 
 - kube-Kadm + Metric Server + MetalLB + MinIO SNSD + DirestPV
@@ -24,19 +30,19 @@ Default 這個類型適合在 Kubernetes 中建立網站或資料庫，能夠透
 
 [閱讀更多詳細資訊]()
 
-#### dt
+#### DT
 
 - kube-Kadm + Metric Server + MetalLB + MinIO MNMD + MySQL NDB + Hadoop + Spark-py
 
-dt 這個類型會在 Kubernetes 中啟動 資料科技平台，能讓你把資料透過 Hadoop + Spark 做深度分析。
+DT 這個類型會在 Kubernetes 中啟動 資料科技平台，能讓你把資料透過 Hadoop + Spark 做深度分析。
 
 [閱讀更多詳細資訊]()
 
-#### cicd
+#### CICD
 
 - kube-Kadm + Metric Server + MetalLB + Jenkins + Argo
 
-cicd 這個類型會在 Kubernetes 中啟動 cicd 的完整功能，適合 DevOPS 工程師使用，能讓程式設計師快速開發與部屬。
+CICD 這個類型會在 Kubernetes 中啟動 cicd 的完整功能，適合 DevOPS 工程師使用，能讓程式設計師快速開發與部屬。
 
 [閱讀更多詳細資訊]()
 
