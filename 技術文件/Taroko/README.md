@@ -31,7 +31,7 @@ Talos Linux 完全重寫 Linux Init 系統，只為做一件事 -- 啟動 Kubern
 * kernel
   - Talos 附帶的 Linux 核心是根據核心自我保護專案（Kernel Self Protection Project）中概述的建議配置。
 * trustd
-  - 要運行和操作 Kubernetes 集群，需要一定程度的信任。基於 「信任根 」的概念，trustd 是一個簡單的 Deamon，負責在系統內建立信任
+  - 要運行和操作 Kubernetes 叢集，需要一定程度的信任。基於「Root of Trust」的概念，trustd 是一個簡單的 Deamon，負責在系統內建立信任。
 * udevd
   - eudev 是 Gentoo 對 udev（systemd 的 Linux 裝置檔案管理器）的分叉。它管理 /dev 中的裝置節點，並在新增或刪除裝置時處理所有使用者空間操作。要了解更多信息，請參閱 Gentoo Wiki。
 
