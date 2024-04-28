@@ -23,9 +23,9 @@ Talos Linux 完全重寫 Linux Init 系統，只為做一件事 -- 啟動 Kubern
 ![image](https://github.com/tarokok8s/Tarokok8s/assets/62133915/90e47f3b-b624-48e2-a7fb-c99d10f397c8)
 
 * apid
-  - 與 Talos 互動時，直接與之互動的 gRPC API 端點由 apid 提供。 apid 充當所有元件互動的網關，並將請求轉發給 machined。
+  - 負責接收前端使用者下達的 talosctl 命令，使用 gRPC API 做溝通，並將請求轉發給 machined。
 * containerd
-  - 業界標準的貨櫃運作，強調簡單性、健壯性和可移植性。
+  - 在 Talos k8s 中負責建置 container，是業界標準的貨櫃執行程序，強調簡單性、健壯性和可移植性。
 * machined
   - Talos 傳統 Linux init-process 的替代品。專為運行 Kubernetes 而設計，不允許啟動任意用戶服務。
 * kernel
