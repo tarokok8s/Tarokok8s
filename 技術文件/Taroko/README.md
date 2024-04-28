@@ -27,7 +27,7 @@ Talos Linux 完全重寫 Linux Init 系統，只為做一件事 -- 啟動 Kubern
 * containerd
   - 在 Talos k8s 中負責管理整個 Container 的生命週期，是業界執行貨櫃的標準(CRI)，強調簡單性、健壯性和可移植性。
 * machined
-  - Talos 傳統 Linux init-process 的替代品。專為運行 Kubernetes 而設計，不允許啟動任意用戶服務。
+  - Talos 的 Linux init-process 的天字第一號。專為運行 Kubernetes 而設計，不允許啟動任意用戶服務。
 * kernel
   - Talos 附帶的 Linux 核心是根據核心自我保護專案（Kernel Self Protection Project）中概述的建議配置。
 * trustd
