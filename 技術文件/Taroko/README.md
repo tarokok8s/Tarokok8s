@@ -33,7 +33,7 @@ Talos Linux 完全重寫 Linux Init 系統，只為做一件事 -- 啟動 Kubern
 * trustd
   - 要運行和操作 Kubernetes 叢集，需要一定程度的信任。基於「Root of Trust」的概念，trustd 是一個簡單的 Deamon，負責在系統內建立信任。
 * udevd
-  - 它管理 /dev 中的裝置節點，並在新增或刪除裝置時處理所有 user space 的操作。
+  - 它管理 /dev 中的裝置，並在新增或刪除裝置時處理所有 user space 的操作。
 
 ## talosctl 運作流程
 Talos 叢集中，Endpoints 負責與客戶端溝通，他可以是 DNS 主機名稱、負載平衡器或是一組 IP 清單等，建議將 Endpoints 直接或是透過負載平衡器指向 Controlplane 節點。
