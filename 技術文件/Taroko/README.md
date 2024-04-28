@@ -22,6 +22,19 @@ Talos Linux 完全重寫 Linux Init 系統，只為做一件事 -- 啟動 Kubern
 ## Talos Linux Components
 ![image](https://github.com/tarokok8s/Tarokok8s/assets/62133915/90e47f3b-b624-48e2-a7fb-c99d10f397c8)
 
+* apid
+  - 與 Talos 互動時，直接與之互動的 gRPC API 端點由 apid 提供。 apid 充當所有元件互動的網關，並將請求轉發給 machined。
+* containerd
+  - 業界標準的貨櫃運作，強調簡單性、健壯性和可移植性。
+* machined
+  - Talos 傳統 Linux init-process 的替代品。專為運行 Kubernetes 而設計，不允許啟動任意用戶服務。
+* kernel
+  - Talos 附帶的 Linux 核心是根據核心自我保護專案（Kernel Self Protection Project）中概述的建議配置的。
+* trustd
+  - 要運行和操作 Kubernetes 集群，需要一定程度的信任。基於 「信任根 」的概念，trustd 是一個簡單的守護進程，負責在系統內建立信任
+* udevd
+  - eudev 是 Gentoo 对 udev（systemd 的 Linux 内核设备文件管理器）的分叉。它管理 /dev 中的设备节点，并在添加或删除设备时处理所有用户空间操作。要了解更多信息，请参阅 Gentoo Wiki。
+
 ## talosctl 運作流程
 Talos 叢集中，Endpoints 負責與客戶端溝通，他可以是 DNS 主機名稱、負載平衡器或是一組 IP 清單等，建議將 Endpoints 直接或是透過負載平衡器指向 Controlplane 節點。
 當客戶端對特定的 nodes(Controlplane 或是 worker)發送請求時，其中一台 Endpoint 將會自動將其代理至目標 nodes 上，同時如果有複數台 Endpoints，會由客戶端選擇其中一台，已次來達成高可用性。 
