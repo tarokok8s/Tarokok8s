@@ -1,4 +1,4 @@
-# 認識 Talos Linux
+# 認識 Taroko k8s 底層運作系統 - Talos Linux
 
 ## 前言
 Kubernetes 實現了對 貨櫃 (Container) 的管理和操作的擴展性，但並沒有辦法管理它所依賴的基礎設施，不管 Kubernetes 在哪個平台建置，例如 AWS、GCE 等雲端商或是 VMware 虛擬化平台，依然需要作業系統。
