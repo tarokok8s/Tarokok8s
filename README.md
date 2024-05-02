@@ -2,17 +2,11 @@
 
 ## 1. Taroko(太魯閣) K8S 簡介
 
-Taroko Kubernetes 使用 Kubernetes 專用的作業系統 Talos Linux 來建立 Kubernetes。
-
-我們客製化了 Kubernetes 中的基礎設施，主要分為 default、dt 和 cicd 3 種類型，讓不同需求的使用者能夠快速擁有對應的基礎設施。
-
 ### 1.1. 目地
 
-Taroko Kubernetes 是一個完全開源的系統用來管理跨多個主機的貨櫃化應用程式 (Containerized Applications)。
+Kubernetes 是當今企業中實現 貨櫃化 (Containerized) 和微服務架構的首選技術。
 
-它專注於把貨櫃化應用程式運作的長長久久、穩穩當當。
-
-與雲端商提供的 K8S 相比，可以完全掌控 Kubernetes 中的基礎設施，舉例 : Controlplane Node、ETCD 和 Worker Node，且不用擔心某個服務不小心大量使用，而遇到費用暴增的挑戰。
+在 Taroko Kubernetes 中可以一鍵啟動 3 種不同類型的基礎設施，主要分為 Default、DT 和 CICD，這 3 種類型，讓不同需求的使用者能夠快速在對應的基礎設施上部屬和維運貨櫃化應用程式 (Containerized Applications)。
 
 ### 1.2. 組成
 
@@ -24,9 +18,13 @@ Taroko Kubernetes 是一個完全開源的系統用來管理跨多個主機的�
 
 #### Default
 
-- kube-Kadm + Metric Server + MetalLB + MinIO SNSD + DirestPV
-
-Default 這個類型適合在 Kubernetes 中建立網站或資料庫，能夠透過 MetalLB 將網站服務對外，並結合 MinIO SNSD + DirestPV 讓資料能夠永存的同時還能隨需擴增。
+- 目標使用者 : 適合需要建立網站應用系統和資料庫服務的一般企業。
+- 特點 : 
+    - 網路流量方面提供附載平衡 (Load Balancer) 的功能。
+    - 資料儲存上能夠隨需擴增的同時還提供容錯。
+    - 資安方面內建 K8s 管理 Console，讓 K8s 入口憑證檔 (KubeConfig) 不流出 K8s 叢集之外。
+    - 維運方面可以監控貨櫃化應用程式的 CPU、記憶體資源使用量
+- 核心技術 : kube-Kadm + Metric Server + MetalLB + MinIO SNSD + DirestPV
 
 [閱讀更多詳細資訊]()
 
@@ -40,9 +38,9 @@ DT 這個類型會在 Kubernetes 中啟動 資料科技平台，能讓你把資�
 
 #### CICD
 
-- kube-Kadm + Metric Server + MetalLB + Jenkins + Argo
-
-CICD 這個類型會在 Kubernetes 中啟動 cicd 的完整功能，適合 DevOPS 工程師使用，能讓程式設計師快速開發與部屬。
+- 目標使用者：DevOps 團隊，需要快速迭代和部署新版本的貨櫃化應用程式。
+- 特點 : Taroko K8s 整合 Argo、Jenkins 等主流 CI/CD 開源軟體，實作 Pipeline 不必從零開始。
+- 核心技術 : kube-Kadm + Metric Server + MetalLB + Jenkins + Argo
 
 [閱讀更多詳細資訊]()
 
