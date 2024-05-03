@@ -28,11 +28,14 @@ Kubernetes 是當今企業中實現 貨櫃化 (Containerized) 和微服務架構
 
 [閱讀更多詳細資訊]()
 
-#### DT
+#### DT 資料科技類型
 
-- kube-Kadm + Metric Server + MetalLB + MinIO MNMD + MySQL NDB + Hadoop + Spark-py
-
-DT 這個類型會在 Kubernetes 中啟動 資料科技平台，能讓你把資料透過 Hadoop + Spark 做深度分析。
+- 目標使用者 : 專門為資料科學家和資料分析師設計，適用於對大數據進行深度分析和處理。
+- 特點 :
+    - 擁有 Default 基礎類型的所有特點。
+    - 在資料的儲存與分析方面，我們提供多種技術來做資料的處理，譬如 : 
+        - 將 Minio MNMD 與 Spark 整合，可以在資料儲存上具有高度可擴展性、實現高可用和容錯，並快速、高效的透過 Spark 對大規模的資料進行分析運算。
+- 核心技術 : kube-Kadm + Metric Server + MetalLB + MinIO MNMD + MySQL NDB + Hadoop + Spark-py
 
 [閱讀更多詳細資訊]()
 
