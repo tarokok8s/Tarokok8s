@@ -8,6 +8,7 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
 
 在 Taroko Kubernetes 安裝好後，可以一鍵啟動 3 種不同類型的基礎設施，主要分為 Default、DT 和 CICD，這 3 種類型，讓不同需求的使用者能夠快速在對應的基礎設施上部屬和維運貨櫃化應用程式 (Containerized Applications)。
 
+這些不同類型的基礎設施使得使用者能夠根據其具體需求，快速且輕鬆地部署和管理貨櫃化應用程式。透過 Taroko Kubernetes，開發者和資料科學家可以更有效地利用他們的時間和資源，專注於創造價值和解決問題。
 ### 1.2. 組成
 
 - 預設總共會有 4 台 VM，一台扮演 Talos 外部管理主機，另外 3 台 VM 會組成 Talos Kubernetes Cluster。
