@@ -4,7 +4,7 @@
 
 ### 1.1. 目的
 
-Taroko Kubernetes 旨在專門設計給 全端開發工程師 和 全端資料工程師 使用。
+Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師設計的 Kubernetes 平台。它的設計旨在簡化基礎設施的部署和管理，讓使用者可以更專注於開發和資料分析的工作，而不必花費過多時間在環境的設定和維護上。
 
 在 Taroko Kubernetes 安裝好後，可以一鍵啟動 3 種不同類型的基礎設施，主要分為 Default、DT 和 CICD，這 3 種類型，讓不同需求的使用者能夠快速在對應的基礎設施上部屬和維運貨櫃化應用程式 (Containerized Applications)。
 
