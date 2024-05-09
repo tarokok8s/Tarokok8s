@@ -1,6 +1,6 @@
-# Taroko Kubernetes
+# Taroko(太魯閣) Kubernetes
 
-## Taroko(太魯閣) Kubernetes 簡介
+## 簡介
 
 ### 1. 目的
 
