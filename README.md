@@ -4,7 +4,7 @@
 
 ### 1. 目的
 
-Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師設計的最佳實作練功坊。它的設計旨在**簡化基礎設施的部署和管理，讓使用者可以更專注於前後端開發和資料分析的工作，而不必花費過多時間在環境設定和維護上**。
+Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師設計的最佳實作練功坊。它的設計旨在簡化基礎設施的部署和管理，讓使用者可以更專注於前後端開發和資料分析的工作，而不必花費過多時間在環境設定和維護上。
 
 在 Taroko Kubernetes 中可以一鍵啟動 2 種不同類型的基礎設施，主要分為 全端開發工程師和全端資料分析工程師，這 2 種類型，讓不同需求的使用者能夠快速在對應的基礎設施上部署和維運貨櫃化應用程式 (Containerized Applications)，並能夠有更多時間可以專注於創造價值和解決問題。
 
@@ -41,15 +41,7 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
     - Hadoop : 是一個開源的分散式數據處理框架，它提供了一個分散式檔案系統(HDFS)和一個分散式計算框架(MapReduce)，用於存儲和處理大數據。
     - 在資料的儲存與分析方面，我們提供多種技術來做資料的處理，譬如 : 
         - 將 Minio MNMD 與 Spark 整合，可以在資料儲存上具有高度可擴展性、實現高可用和容錯，並快速、高效的透過 Spark 對大規模的資料進行分析運算。
-- 核心技術 : kube-Kadm + Metric Server + MetalLB + MinIO MNMD + MySQL NDB + Hadoop + Spark-py
-
-[閱讀更多詳細資訊]()
-
-#### CICD DevOps 類型
-
-- 目標使用者：DevOps 團隊，需要快速迭代和部署新版本的貨櫃化應用程式。
-- 特點 : Taroko K8s 整合 Argo、Jenkins 等主流 CI/CD 開源軟體，實作 Pipeline 不必從零開始。
-- 核心技術 : kube-Kadm + Metric Server + MetalLB + Jenkins + Argo
+- 核心技術 : kube-Kadm + Metric Server + MetalLB + MinIO MNMD + MySQL NDB + Hadoop + Spark-py + Argo
 
 [閱讀更多詳細資訊]()
 
