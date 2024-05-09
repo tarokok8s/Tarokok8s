@@ -16,15 +16,16 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
 
 ### 3. 各類型詳細介紹
 
-#### Default 基礎類型
+#### Full Stack DevOps 基礎類型
 
 - 目標使用者 : 專門為全端開發工程師設計。
 - 特點 : 
+    - 管理 Console : Kube-kadm
     - 網路流量方面提供負載平衡 (Load Balancer) 的功能。
     - 資料儲存上能夠隨需擴增的同時還提供容錯。
     - 資安方面內建 K8s 管理 Console，讓 K8s 入口憑證檔 (KubeConfig) 不流出 K8s 叢集之外。
     - 維運方面可以監控貨櫃化應用程式的 CPU、記憶體資源使用量
-- 核心技術 : kube-Kadm + Metric Server + MetalLB + MinIO SNSD + DirectPV + MySQL + Jenkins
+- 核心技術 : kube-Kadm + Metric Server + MetalLB + Gateway API + Cert-manager + DirectPV + MySQL + Jenkins + MinIO SNSD、seaweedfs、JuiceFS(擇一)
 
 ![image](https://github.com/tarokok8s/Tarokok8s/assets/90317293/a12e9eb3-29f9-4fbb-a66a-2941f5ba1e0a)
 
