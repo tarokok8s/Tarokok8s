@@ -1,6 +1,6 @@
-# Taroko K8S
+# Taroko Kubernetes
 
-## Taroko(太魯閣) K8S 簡介
+## Taroko(太魯閣) Kubernetes 簡介
 
 ### 1. 目的
 
@@ -52,7 +52,7 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
   - [VMware Workstation Player 網路架構圖]()
   - [VMware Workstation Player IaC 程式設計]()
 - Taroko K8S 基礎介紹與安裝
-  - [Taroko K8S 基礎作業系統介紹](https://github.com/tarokok8s/Tarokok8s/tree/8288b280d2ea3965ba7954267187c92c6f70b7b3/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko)
+  - [Taroko K8S 基礎作業系統介紹](https://github.com/tarokok8s/Tarokok8s/tree/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko)
   - [Taroko K8S 基礎架構圖](https://github.com/tarokok8s/Tarokok8s/blob/c76dfcd6d206f9604a01b9c5238ea31fd0524ee7/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%9F%BA%E7%A4%8E%E6%9E%B6%E6%A7%8B%E5%9C%96.md)
   - [Tariko K8S 平台建置](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%B9%B3%E5%8F%B0%E5%BB%BA%E7%BD%AE.md)
 - Taroko K8S 核心服務
