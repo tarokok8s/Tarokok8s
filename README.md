@@ -16,7 +16,7 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
 
 ### 3. 各類型詳細介紹
 
-#### Full Stack DevOps 基礎類型
+#### Full Stack DevOps 類型
 
 - 目標使用者 : 專門為全端開發工程師設計。
 - 特點 : 
@@ -32,7 +32,7 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
 
 [閱讀更多詳細資訊]()
 
-#### Full Stack Data Engineer 基礎類型
+#### Full Stack Data Engineer 類型
 
 - 目標使用者 : 專門為全端資料工程師設計。
 - 特點 :
