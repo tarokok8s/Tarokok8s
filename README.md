@@ -4,7 +4,7 @@
 
 ### 1. 目的
 
-Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師設計的 Kubernetes 最佳實作練功坊。它的設計旨在**簡化基礎設施的部署和管理，讓使用者可以更專注於前後端開發和資料分析的工作，而不必花費過多時間在環境設定和維護上**。
+Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師設計的最佳實作練功坊。它的設計旨在**簡化基礎設施的部署和管理，讓使用者可以更專注於前後端開發和資料分析的工作，而不必花費過多時間在環境設定和維護上**。
 
 在 Taroko Kubernetes 中可以一鍵啟動 2 種不同類型的基礎設施，主要分為 全端開發工程師和全端資料分析工程師，這 2 種類型，讓不同需求的使用者能夠快速在對應的基礎設施上部署和維運貨櫃化應用程式 (Containerized Applications)，並能夠有更多時間可以專注於創造價值和解決問題。
 
@@ -20,11 +20,12 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
 
 - 目標使用者 : 專門為全端開發工程師設計。
 - 特點 : 
-    - 管理 Console : Kube-kadm
-    - 網路流量方面提供負載平衡 (Load Balancer) 的功能。
+    - 管理 Console(Kube-kadm) : 內建 K8s 管理 Console，讓 K8s 入口憑證檔 (KubeConfig) 不流出 K8s 叢集之外。
+    - MetalLB : 網路流量方面提供負載平衡 (Load Balancer) 的功能。
+    - Gateway API : 是一種用於管理和保護 API 流量。它充當單一入口點，可以讓客戶端存取後端服務。
+    - Cert-manager : 用於集群中自動化管理 SSL/TLS 憑證的工具。
     - 資料儲存上能夠隨需擴增的同時還提供容錯。
-    - 資安方面內建 K8s 管理 Console，讓 K8s 入口憑證檔 (KubeConfig) 不流出 K8s 叢集之外。
-    - 維運方面可以監控貨櫃化應用程式的 CPU、記憶體資源使用量
+    - Metric Server : 維運方面可以監控貨櫃化應用程式的 CPU、記憶體資源使用量
 - 核心技術 : kube-Kadm + Metric Server + MetalLB + Gateway API + Cert-manager + DirectPV + MySQL + Jenkins + MinIO SNSD、seaweedfs、JuiceFS(擇一)
 
 ![image](https://github.com/tarokok8s/Tarokok8s/assets/90317293/a12e9eb3-29f9-4fbb-a66a-2941f5ba1e0a)
