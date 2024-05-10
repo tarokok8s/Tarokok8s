@@ -1,0 +1,16 @@
+pipeline {
+    agent {
+        kubernetes {
+            inheritFrom 'mycicd'
+            yamlFile 'cicd-pod.yaml'
+            defaultContainer 'p1'
+        }
+    }
+    stages {
+        stage ('Build') {
+            steps {
+                sh 'task build'
+            }
+        }
+    }
+}
