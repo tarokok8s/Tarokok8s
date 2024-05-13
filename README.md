@@ -41,7 +41,7 @@ VMware + Talos 組成
     - Hadoop : 是一個開源的分散式數據處理框架，它提供了一個分散式檔案系統(HDFS)和一個分散式計算框架(MapReduce)，用於存儲和處理大數據。
     - 在資料的儲存與分析方面，我們提供多種技術來做資料的處理，譬如 : 
         - 將 Minio MNMD 與 Spark 整合，可以在資料儲存上具有高度可擴展性、實現高可用和容錯，並快速、高效的透過 Spark 對大規模的資料進行分析運算。
-- 核心技術 : kube-Kadm + Metric Server + MetalLB + MinIO MNMD + MySQL NDB + Hadoop + Spark-py + Hive + Argo
+- 核心技術 : kube-Kadm + Metric Server + MetalLB + MinIO MNMD + MySQL NDB + Hadoop + Spark-py + Hive + jupyter lab +Argo
 
 [閱讀更多詳細資訊]()
 
