@@ -2,7 +2,7 @@
 
 ## 下載 Taroko K8S 壓縮檔
 
-下載連結[請點此](https://drive.google.com/file/d/1e43tgGug0gUSCRqKbSNzXiusHylG1l0W/view?usp=drive_link)
+下載連結[請點此](https://drive.google.com/file/d/1axT84N_10R-Ftw5QL9kaB9dXqOhCvM1z/view?usp=drive_link)
 
 ## 在 Windows 執行以下命令
 * 開啟檔案總管，確認壓縮檔存放位置
