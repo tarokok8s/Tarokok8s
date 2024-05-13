@@ -9,8 +9,8 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
 在 Taroko Kubernetes 中可以一鍵啟動 2 種不同架構的工作平台，主要分別會給全端開發工程師和全端資料分析工程師使用，讓不同需求的使用者能夠快速在對應的工作平台上部署和維運貨櫃化應用程式 (Containerized Applications)，並能夠有更多時間可以專注於創造價值和解決問題。
 
 ### 2. 組成
-
-- 預設總共會有 4 台 VM，一台扮演 Talos 外部管理主機，另外 3 台 VM 會組成 Talos Kubernetes Cluster。
+VMware + Talos 組成
+- 預設總共會有 4 台 VM，一台扮演 Taroko K8s 管理主機，另外 3 台 VM 會組成 Taroko K8s，這 3 台主機由 Talos Linux 組成。
 
 [閱讀更多詳細資訊](https://github.com/tarokok8s/Tarokok8s/blob/5090dea47b5d76cc2bff134915ce52507fe86fd8/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%9F%BA%E7%A4%8E%E6%9E%B6%E6%A7%8B%E5%9C%96.md)
 
