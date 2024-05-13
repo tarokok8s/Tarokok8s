@@ -14,6 +14,8 @@ VMware + Talos 組成
 
 [閱讀更多詳細資訊](https://github.com/tarokok8s/Tarokok8s/blob/5090dea47b5d76cc2bff134915ce52507fe86fd8/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%9F%BA%E7%A4%8E%E6%9E%B6%E6%A7%8B%E5%9C%96.md)
 
+### Quick Start
+
 ### 3. 平台運作架構介紹
 
 #### Full Stack DevOps 類型
