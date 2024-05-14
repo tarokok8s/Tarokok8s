@@ -39,7 +39,7 @@ k start
 ssh bigred@192.168.23.133
 ```
 
-- 3.7 啟動 Taroko K8S
+- 3.7 啟動 Taroko K8s
 ```
 1m2w.sh basic
 ```
