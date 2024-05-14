@@ -16,7 +16,7 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
 
 ### 3. Quick Start
 
-
+下載連結[請點此](https://drive.google.com/file/d/1axT84N_10R-Ftw5QL9kaB9dXqOhCvM1z/view?usp=drive_link)
 
 ### 4. 平台運作架構介紹
 
@@ -30,7 +30,7 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
     - Cert-manager : 用於集群中自動化管理 SSL/TLS 憑證的工具。
     - 資料儲存上能夠隨需擴增的同時還提供容錯。
     - Metric Server : 維運方面可以監控貨櫃化應用程式的 CPU、記憶體資源使用量
-- 核心技術 : kube-Kadm + Metric Server + MetalLB + Gateway API + Cert-manager + DirectPV + MySQL + Jenkins + MinIO SNSD、seaweedfs、JuiceFS(擇一)
+- 核心技術 : kube-Kadm + Metric Server + MetalLB + Gateway API + Cert-manager + DirectPV + MySQL + Argo workflows + MinIO SNSD + JuiceFS
 
 ![image](https://github.com/tarokok8s/Tarokok8s/assets/90317293/a12e9eb3-29f9-4fbb-a66a-2941f5ba1e0a)
 
@@ -45,7 +45,7 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
     - Hadoop : 是一個開源的分散式數據處理框架，它提供了一個分散式檔案系統(HDFS)和一個分散式計算框架(MapReduce)，用於存儲和處理大數據。
     - 在資料的儲存與分析方面，我們提供多種技術來做資料的處理，譬如 : 
         - 將 Minio MNMD 與 Spark 整合，可以在資料儲存上具有高度可擴展性、實現高可用和容錯，並快速、高效的透過 Spark 對大規模的資料進行分析運算。
-- 核心技術 : kube-Kadm + Metric Server + MetalLB + MinIO MNMD + MySQL NDB + Hadoop + Spark-py + Hive + jupyter lab +Argo
+- 核心技術 : kube-Kadm + Metric Server + MetalLB + MinIO MNMD + MySQL NDB + Hadoop + Spark-py + Hive + JupyterLab + Argo workflows
 
 [閱讀更多詳細資訊]()
 
