@@ -10,11 +10,13 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
 
 ### 2. 組成
 
-- 預設情況下，系統將擁有四台虛擬機（VM），會在 Windows 環境下使用 VMware Workstation 來建立這些虛擬機。其中一台將充當 Taroko K8s 管理主機，其餘三台將組成 Taroko K8s 叢集，這三台主機將運行 Talos Linux 作業系統。
+- 預設情況下，系統將擁有四台虛擬機（VM），會在 Windows 環境下使用 VMware Workstation 來建立這些虛擬機。其中一台將充當 Taroko K8s 管理主機，其餘三台將組成 Taroko K8s 叢集，這三台主機將執行 Talos Linux 作業系統。
 
 [閱讀更多詳細資訊](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%9F%BA%E7%A4%8E%E6%9E%B6%E6%A7%8B%E5%9C%96.md)
 
 ### 3. Quick Start
+
+
 
 ### 4. 平台運作架構介紹
 
