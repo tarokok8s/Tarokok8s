@@ -62,10 +62,10 @@ ssh bigred@192.168.23.133
     - MetalLB : 網路流量方面提供負載平衡 (Load Balancer) 的功能。
     - Gateway API : 是一種用於管理和保護 API 流量。它充當單一入口點，可以讓客戶端存取後端服務。
     - Cert-manager : 用於集群中自動化管理 SSL/TLS 憑證的工具。
-    - MySQL : 是一個流行的開源關聯式資料庫管理系統，做為後端資料庫使用。
+    - MySQL NDB : 是一個流行的開源關聯式資料庫管理系統，做為後端資料庫使用。
     - Argo workflows : 是一個開源的貨櫃原生工作流程引擎，它用於協調複雜的多步驟任務和流程，主要用途為 Machine Learning、Data and batch processing、Infrastructure automation、CI/CD 等。
     - MinIO SNSD + JuiceFS : 資料儲存上能夠隨需擴增的同時還提供容錯。
-- 核心技術 : kube-Kadm + Metrics Server + MetalLB + Gateway API + Cert-manager + DirectPV + MySQL + Argo workflows + MinIO SNSD + JuiceFS
+- 核心技術 : kube-Kadm + Metrics Server + MetalLB + Gateway API + Cert-manager + DirectPV + MySQL NDB + Argo workflows + MinIO SNSD + JuiceFS
 
 ![image](https://github.com/tarokok8s/Tarokok8s/assets/90317293/a12e9eb3-29f9-4fbb-a66a-2941f5ba1e0a)
 
@@ -89,15 +89,33 @@ ssh bigred@192.168.23.133
 
 # 文件目錄
 
-- 安裝 Taroko K8S 基礎設施
+- 安裝 Taroko K8s 基礎設施
   - [VMware Workstation Player 安裝]()
   - [VMware Workstation Player 網路架構圖]()
   - [VMware Workstation Player IaC 程式設計]()
-- Taroko K8S 基礎介紹與安裝
-  - [Taroko K8S 基礎作業系統介紹](https://github.com/tarokok8s/Tarokok8s/tree/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko)
-  - [Taroko K8S 基礎架構圖](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%9F%BA%E7%A4%8E%E6%9E%B6%E6%A7%8B%E5%9C%96.md)
-  - [Taroko K8S 平台建置](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%B9%B3%E5%8F%B0%E5%BB%BA%E7%BD%AE.md)
-- Taroko K8S 核心服務
-  - [Taroko K8S 核心服務 - Metric Server]()
-  - [Taroko K8S 核心服務 - MetalLB]()
-  - [Taroko K8S 核心服務 - MinIO SNSD]()
+- Taroko K8s 基礎介紹與安裝
+  - [Taroko K8s 基礎作業系統介紹](https://github.com/tarokok8s/Tarokok8s/tree/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko)
+  - [Taroko K8s 基礎架構圖](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%9F%BA%E7%A4%8E%E6%9E%B6%E6%A7%8B%E5%9C%96.md)
+  - [Taroko K8s 平台建置](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%B9%B3%E5%8F%B0%E5%BB%BA%E7%BD%AE.md)
+- Full Stack DevOps 架構
+  - [Taroko K8s 核心服務 - Kube-kadm]()
+  - [Taroko K8s 核心服務 - Metrics Server]()
+  - [Taroko K8s 核心服務 - MetalLB]()
+  - [Taroko K8s 核心服務 - Gateway API]()
+  - [Taroko K8s 核心服務 - Cert-manager]()
+  - [Taroko K8s 核心服務 - DirectPV]()
+  - [Taroko K8s 核心服務 - MySQL NDB]()
+  - [Taroko K8s 核心服務 - Argo workflows]()
+  - [Taroko K8s 核心服務 - MinIO SNSD + JuiceFS]()
+- Full Stack Data Engineer 架構
+  - [Taroko K8s 核心服務 - Kube-kadm]()
+  - [Taroko K8s 核心服務 - Metrics Server]()
+  - [Taroko K8s 核心服務 - MetalLB]()
+  - [Taroko K8s 核心服務 - DirectPV]()
+  - [Taroko K8s 核心服務 - MySQL NDB]()
+  - [Taroko K8s 核心服務 - Hadoop]()
+  - [Taroko K8s 核心服務 - Spark-py]()
+  - [Taroko K8s 核心服務 - Hive]()
+  - [Taroko K8s 核心服務 - JupyterLab]()
+  - [Taroko K8s 核心服務 - Argo workflows]()
+  - [Taroko K8s 核心服務 - MinIO SNSD + JuiceFS]()
