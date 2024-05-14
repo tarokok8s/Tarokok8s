@@ -29,6 +29,21 @@ cd VMTK2024v1.6.7
 ```
 k start
 ```
+- 3.5 確認 TKAdm 管理主機 IP 資訊
+
+![image](https://github.com/tarokok8s/Tarokok8s/assets/62133915/45d4f666-d645-4aea-9bc8-d631c65d6af2)
+
+- 3.6 使用 ssh 登入 TKAdm 管理主機
+  - 帳號/密碼: bigred/bigred
+```
+ssh bigred@192.168.23.133
+```
+
+- 3.7 啟動 Taroko K8S
+```
+1m2w.sh basic
+```
+
 ### 4. 平台運作架構介紹
 
 #### Full Stack DevOps 類型
