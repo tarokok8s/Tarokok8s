@@ -28,8 +28,8 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
     - MetalLB : 網路流量方面提供負載平衡 (Load Balancer) 的功能。
     - Gateway API : 是一種用於管理和保護 API 流量。它充當單一入口點，可以讓客戶端存取後端服務。
     - Cert-manager : 用於集群中自動化管理 SSL/TLS 憑證的工具。
-    - 資料儲存上能夠隨需擴增的同時還提供容錯。
-    - Metric Server : 維運方面可以監控貨櫃化應用程式的 CPU、記憶體資源使用量
+    - MinIO SNSD + JuiceFS : 資料儲存上能夠隨需擴增的同時還提供容錯。
+    - Metric Server : 維運方面可以監控貨櫃化應用程式的 CPU、記憶體資源使用量。
 - 核心技術 : kube-Kadm + Metric Server + MetalLB + Gateway API + Cert-manager + DirectPV + MySQL + Argo workflows + MinIO SNSD + JuiceFS
 
 ![image](https://github.com/tarokok8s/Tarokok8s/assets/90317293/a12e9eb3-29f9-4fbb-a66a-2941f5ba1e0a)
