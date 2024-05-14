@@ -76,14 +76,14 @@ ssh bigred@192.168.23.133
 - 目標使用者 : 專門為全端資料工程師設計。
 - 平台元件 :
     - 管理 Console(Kube-kadm) : 內建 K8s 管理 Console，讓 K8s 入口憑證檔 (KubeConfig) 不流出 K8s 叢集之外。
-    - Metric Server : 維運方面可以監控貨櫃化應用程式的 CPU、記憶體資源使用量。
+    - Metrics Server : 維運方面可以監控貨櫃化應用程式的 CPU、記憶體資源使用量。
     - MetalLB : 網路流量方面提供負載平衡 (Load Balancer) 的功能。
     - Hadoop : 是一個開源的分散式數據處理框架，它提供了一個分散式檔案系統(HDFS)和一個分散式計算框架(MapReduce)，用於存儲和處理大數據。
     - 在資料的儲存與分析方面，我們提供多種技術來做資料的處理，譬如 : 
         - 將 Minio MNMD 與 Spark 整合，可以在資料儲存上具有高度可擴展性、實現高可用和容錯，並快速、高效的透過 Spark 對大規模的資料進行分析運算。
     - Argo workflows : 是一個開源的貨櫃原生工作流程引擎，它用於協調複雜的多步驟任務和流程，主要用途為 Machine Learning、Data and batch processing、Infrastructure automation、CI/CD 等。
     - MinIO MNMD + JuiceFS : 資料儲存上能夠隨需擴增的同時還提供容錯。
-- 核心技術 : kube-Kadm + Metric Server + MetalLB + MySQL NDB + Hadoop + Spark-py + Hive + JupyterLab + Argo workflows + MinIO MNMD + JuiceFS 
+- 核心技術 : kube-Kadm + Metrics Server + MetalLB + MySQL NDB + Hadoop + Spark-py + Hive + JupyterLab + Argo workflows + MinIO MNMD + JuiceFS 
 
 [閱讀更多詳細資訊]()
 
