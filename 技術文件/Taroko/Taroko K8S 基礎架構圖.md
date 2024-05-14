@@ -5,7 +5,7 @@
 * 建立三台 Talos Linux 虛擬機作為 K8s 節點
 * tkadm 設置兩個虛擬網路介面
   - 其一設為 NAT 使其能夠連接外部網路
-  - 其一作為 Host-only 內部網路的 Gateway，讓 Tarlos K8s 叢集的節點進行 IP forward，使他們能夠上網
+  - 其一作為 Host-only 內部網路的 Gateway，讓 Taroko K8s 叢集的節點進行 IP forward，使他們能夠上網
 
 ![未命名](https://github.com/tarokok8s/Tarokok8s/assets/62133915/96872c9f-3cf0-4025-9655-a5e0bfe652f2)
 
