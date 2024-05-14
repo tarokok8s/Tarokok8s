@@ -102,7 +102,7 @@ ssh bigred@192.168.23.133
   - [Taroko K8s 核心服務 - Metrics Server]()
   - [Taroko K8s 核心服務 - MetalLB]()
   - [Taroko K8s 核心服務 - Gateway API](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Kubernetes%20Workload/Gateway%20API.md)
-  - [Taroko K8s 核心服務 - Cert-manager]()
+  - [Taroko K8s 核心服務 - Cert-manager](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Kubernetes%20Workload/Cert-manager.md)
   - [Taroko K8s 核心服務 - DirectPV]()
   - [Taroko K8s 核心服務 - MySQL NDB]()
   - [Taroko K8s 核心服務 - Argo workflows]()
