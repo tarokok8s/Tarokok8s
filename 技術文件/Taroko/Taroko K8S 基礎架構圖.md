@@ -11,9 +11,9 @@
 
 ## Windows 實體機最低資源規格
 
-| Server CPU | Server RAM | 
-| -------- | -------- | 
-| 8+ Core     | 32 GB     | 
+| Server CPU | Server RAM | Server Disk |
+| -------- | -------- | -------- |
+| 8+ Core     | 32 GB     | 1T | 
 
 
 [返回首頁](https://github.com/tarokok8s/Tarokok8s)
