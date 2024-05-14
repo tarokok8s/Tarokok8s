@@ -15,35 +15,38 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
 [閱讀更多詳細資訊](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%9F%BA%E7%A4%8E%E6%9E%B6%E6%A7%8B%E5%9C%96.md)
 
 ### 3. Quick Start
- - 3.1 Prerequisites
+ - 3.1. Prerequisites
    - OS: Windows 10,11
-   - 硬體資源 CPU: 8+ Core RAM: 32 GB Disk: 1T
+   - 硬體資源
+     - CPU: 8+ Core
+     - RAM: 32 GB
+     - Disk: 1T
    - 需先安裝好 VMware Workstation 17 Player，詳細資訊[請點此]()
 
-- 3.1 下載連結壓縮檔[請點此](https://drive.google.com/file/d/1axT84N_10R-Ftw5QL9kaB9dXqOhCvM1z/view?usp=drive_link)
+- 3.2. 下載連結壓縮檔[請點此](https://drive.google.com/file/d/1axT84N_10R-Ftw5QL9kaB9dXqOhCvM1z/view?usp=drive_link)
 
-- 3.2 將壓縮檔解壓縮，詳細資訊[請點此](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%B9%B3%E5%8F%B0%E5%BB%BA%E7%BD%AE.md)
+- 3.3. 將壓縮檔解壓縮，詳細資訊[請點此](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%B9%B3%E5%8F%B0%E5%BB%BA%E7%BD%AE.md)
 
-- 3.3 開啟 cmd，進入 VMTK2024v1.6.7 目錄
+- 3.4. 開啟 cmd，進入 VMTK2024v1.6.7 目錄
 ```
 cd VMTK2024v1.6.7
 ```
 
-- 3.4 啟動 Taroko K8s VM
+- 3.5. 啟動 Taroko K8s VM
 ```
 k start
 ```
-- 3.5 確認 TKAdm 管理主機 IP 資訊
+- 3.6. 確認 TKAdm 管理主機 IP 資訊
 
 ![image](https://github.com/tarokok8s/Tarokok8s/assets/62133915/45d4f666-d645-4aea-9bc8-d631c65d6af2)
 
-- 3.6 使用 ssh 登入 TKAdm 管理主機
+- 3.7. 使用 ssh 登入 TKAdm 管理主機
   - 帳號/密碼: bigred/bigred
 ```
 ssh bigred@192.168.23.133
 ```
 
-- 3.7 啟動 Taroko K8s
+- 3.8. 啟動 Taroko K8s
 ```
 1m2w.sh basic
 ```
