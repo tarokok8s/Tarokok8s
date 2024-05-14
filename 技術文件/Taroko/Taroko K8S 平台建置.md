@@ -6,13 +6,16 @@
 
 ## 在 Windows 執行以下命令
 * 開啟檔案總管，確認壓縮檔存放位置
-![擷取_2024_04_27_16_42_33_423](https://github.com/tarokok8s/Tarokok8s/assets/62133915/52652985-8f2c-4902-bbcf-9bb34a28cb3a)
+
+![image](https://github.com/tarokok8s/Tarokok8s/assets/62133915/2e3bf46d-4639-47c6-bbb8-fa81ee1f8013)
 
 * 點選兩下進入到壓縮檔，按右鍵選擇 "複製"
-![擷取_2024_04_27_16_42_39_135](https://github.com/tarokok8s/Tarokok8s/assets/62133915/465e5c7c-ff84-4e33-bd80-ee2473a9872e)
+
+![image](https://github.com/tarokok8s/Tarokok8s/assets/62133915/59d1ca54-3c02-4078-9942-9946c3f623f7)
 
 * 在 Windows 家目錄，按右鍵選擇 "貼上"
-![擷取_2024_04_27_16_43_44_677](https://github.com/tarokok8s/Tarokok8s/assets/62133915/8754eb83-1da8-49cc-bafb-2e1ac13e01bd)
+
+![image](https://github.com/tarokok8s/Tarokok8s/assets/62133915/d5c38154-c3ab-4e13-922b-876928fec4f5)
 
 * 開啟 cmd，進入 VMTK2024v1.6.7 目錄
 ```
