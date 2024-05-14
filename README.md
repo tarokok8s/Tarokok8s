@@ -48,7 +48,7 @@ ssh bigred@192.168.23.133
 
 - 3.8. 啟動 Taroko K8s
 ```
-1m2w.sh basic
+1m2w.sh default
 ```
 
 ### 4. 平台運作架構介紹
@@ -58,14 +58,14 @@ ssh bigred@192.168.23.133
 - 目標使用者 : 專門為全端開發工程師設計。
 - 平台元件 : 
     - 管理 Console(Kube-kadm) : 內建 K8s 管理 Console，讓 K8s 入口憑證檔 (KubeConfig) 不流出 K8s 叢集之外。
-    - Metric Server : 維運方面可以監控貨櫃化應用程式的 CPU、記憶體資源使用量。
+    - Metrics Server : 維運方面可以監控貨櫃化應用程式的 CPU、記憶體資源使用量。
     - MetalLB : 網路流量方面提供負載平衡 (Load Balancer) 的功能。
     - Gateway API : 是一種用於管理和保護 API 流量。它充當單一入口點，可以讓客戶端存取後端服務。
     - Cert-manager : 用於集群中自動化管理 SSL/TLS 憑證的工具。
     - MySQL : 是一個流行的開源關聯式資料庫管理系統，做為後端資料庫使用。
     - Argo workflows : 是一個開源的貨櫃原生工作流程引擎，它用於協調複雜的多步驟任務和流程，主要用途為 Machine Learning、Data and batch processing、Infrastructure automation、CI/CD 等。
     - MinIO SNSD + JuiceFS : 資料儲存上能夠隨需擴增的同時還提供容錯。
-- 核心技術 : kube-Kadm + Metric Server + MetalLB + Gateway API + Cert-manager + DirectPV + MySQL + Argo workflows + MinIO SNSD + JuiceFS
+- 核心技術 : kube-Kadm + Metrics Server + MetalLB + Gateway API + Cert-manager + DirectPV + MySQL + Argo workflows + MinIO SNSD + JuiceFS
 
 ![image](https://github.com/tarokok8s/Tarokok8s/assets/90317293/a12e9eb3-29f9-4fbb-a66a-2941f5ba1e0a)
 
