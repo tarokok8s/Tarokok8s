@@ -39,7 +39,7 @@ ssh bigred@192.168.23.133
 
 * 啟動 Taroko K8s
 ```
-1m2w.sh basic
+1m2w.sh default
 ```
 
 [返回首頁](https://github.com/tarokok8s/Tarokok8s)
