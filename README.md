@@ -16,16 +16,16 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
 
 ### 3. Quick Start
 
-3.1 下載連結壓縮檔[請點此](https://drive.google.com/file/d/1axT84N_10R-Ftw5QL9kaB9dXqOhCvM1z/view?usp=drive_link)
+- 3.1 下載連結壓縮檔[請點此](https://drive.google.com/file/d/1axT84N_10R-Ftw5QL9kaB9dXqOhCvM1z/view?usp=drive_link)
 
-3.2 將壓縮檔解壓縮，詳細資訊[請看此](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%B9%B3%E5%8F%B0%E5%BB%BA%E7%BD%AE.md)
+- 3.2 將壓縮檔解壓縮，詳細資訊[請點此](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%B9%B3%E5%8F%B0%E5%BB%BA%E7%BD%AE.md)
 
-3.3 開啟 cmd，進入 VMTK2024v1.6.7 目錄
+- 3.3 開啟 cmd，進入 VMTK2024v1.6.7 目錄
 ```
 cd VMTK2024v1.6.7
 ```
 
-3.4 啟動 Taroko K8s VM
+- 3.4 啟動 Taroko K8s VM
 ```
 k start
 ```
