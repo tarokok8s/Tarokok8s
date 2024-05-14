@@ -28,6 +28,7 @@ k start
 
 ## 進入 TKAdm 管理主機
 * 確認 TKAdm 管理主機 IP 資訊
+
 ![image](https://github.com/tarokok8s/Tarokok8s/assets/62133915/45d4f666-d645-4aea-9bc8-d631c65d6af2)
 
 * 使用 ssh 登入 TKAdm 管理主機
@@ -36,7 +37,7 @@ k start
 ssh bigred@192.168.23.133
 ```
 
-* 啟動 Taroko K8S
+* 啟動 Taroko K8s
 ```
 1m2w.sh basic
 ```
