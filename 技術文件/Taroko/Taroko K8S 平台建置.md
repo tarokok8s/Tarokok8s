@@ -21,7 +21,7 @@
 ```
 cd VMTK2024v1.6.7
 ```
-* 啟動 Taroko K8S VM
+* 啟動 Taroko K8s VM
 ```
 k start
 ```
