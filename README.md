@@ -15,6 +15,10 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
 [閱讀更多詳細資訊](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%9F%BA%E7%A4%8E%E6%9E%B6%E6%A7%8B%E5%9C%96.md)
 
 ### 3. Quick Start
+ - 3.1 Prerequisites
+   - OS: Windows 10,11
+   - 硬體資源 CPU: 8+ Core RAM: 32 GB Disk: 1T
+   - 需先安裝好 VMware Workstation 17 Player，詳細資訊[請點此]()
 
 - 3.1 下載連結壓縮檔[請點此](https://drive.google.com/file/d/1axT84N_10R-Ftw5QL9kaB9dXqOhCvM1z/view?usp=drive_link)
 
