@@ -55,7 +55,9 @@ ssh bigred@192.168.23.133
     - MetalLB : 網路流量方面提供負載平衡 (Load Balancer) 的功能。
     - Gateway API : 是一種用於管理和保護 API 流量。它充當單一入口點，可以讓客戶端存取後端服務。
     - Cert-manager : 用於集群中自動化管理 SSL/TLS 憑證的工具。
-    - MinIO SNSD + JuiceFS : 資料儲存上能夠隨需擴增的同時還提供容錯。    
+    - MySQL : 是一個流行的開源關聯式資料庫管理系統，做為後端資料庫使用。
+    - Argo workflows : 是一個開源的容器原生工作流程引擎，它用於協調複雜的多步驟任務和流程，主要用途為 Machine Learning、Data and batch processing、Infrastructure automation、CI/CD 等。
+    - MinIO SNSD + JuiceFS : 資料儲存上能夠隨需擴增的同時還提供容錯。
 - 核心技術 : kube-Kadm + Metric Server + MetalLB + Gateway API + Cert-manager + DirectPV + MySQL + Argo workflows + MinIO SNSD + JuiceFS
 
 ![image](https://github.com/tarokok8s/Tarokok8s/assets/90317293/a12e9eb3-29f9-4fbb-a66a-2941f5ba1e0a)
@@ -72,7 +74,9 @@ ssh bigred@192.168.23.133
     - Hadoop : 是一個開源的分散式數據處理框架，它提供了一個分散式檔案系統(HDFS)和一個分散式計算框架(MapReduce)，用於存儲和處理大數據。
     - 在資料的儲存與分析方面，我們提供多種技術來做資料的處理，譬如 : 
         - 將 Minio MNMD 與 Spark 整合，可以在資料儲存上具有高度可擴展性、實現高可用和容錯，並快速、高效的透過 Spark 對大規模的資料進行分析運算。
-- 核心技術 : kube-Kadm + Metric Server + MetalLB + MinIO MNMD + MySQL NDB + Hadoop + Spark-py + Hive + JupyterLab + Argo workflows
+    - Argo workflows : 是一個開源的容器原生工作流程引擎，它用於協調複雜的多步驟任務和流程，主要用途為 Machine Learning、Data and batch processing、Infrastructure automation、CI/CD 等。
+    - MinIO MNMD + JuiceFS : 資料儲存上能夠隨需擴增的同時還提供容錯。
+- 核心技術 : kube-Kadm + Metric Server + MetalLB + MySQL NDB + Hadoop + Spark-py + Hive + JupyterLab + Argo workflows + MinIO MNMD + JuiceFS 
 
 [閱讀更多詳細資訊]()
 
