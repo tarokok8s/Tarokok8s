@@ -97,6 +97,7 @@ ssh bigred@192.168.23.133
   - [Taroko K8s 基礎作業系統介紹](https://github.com/tarokok8s/Tarokok8s/tree/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko)
   - [Taroko K8s 基礎架構圖](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%9F%BA%E7%A4%8E%E6%9E%B6%E6%A7%8B%E5%9C%96.md)
   - [Taroko K8s 平台建置](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%B9%B3%E5%8F%B0%E5%BB%BA%E7%BD%AE.md)
+  - [Taroko K8s 平台操作手冊](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8s%20%E5%B9%B3%E5%8F%B0%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8A.md)
 - Full Stack DevOps 架構
   - [Taroko K8s 核心服務 - Kube-kadm]()
   - [Taroko K8s 核心服務 - Metrics Server]()
