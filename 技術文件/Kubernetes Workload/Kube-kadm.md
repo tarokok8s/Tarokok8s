@@ -1,7 +1,7 @@
 # Kube-kadm 
 
 ## 功能介紹
-1. kube-kadm 這個 Pod 為 Taroko K8s 管理 Console，可以透過 ssh 連進 kube-kadm 管理叢集與 Build Image，且不讓 K8s 入口憑證檔 (KubeConfig) 流出 K8s 叢集之外。
+1. kube-kadm 這個 Pod 為 Taroko K8s 管理 Console，可以透過 ssh 連進 kube-kadm 管理叢集與 Build Image，目的是為了不讓 K8s 入口憑證檔 (KubeConfig) 流出 K8s 叢集之外，以達到資安上的風險。
 2. kube-kadm 內建 Docker Registry，充當為整個叢集的 Image Registry。
 
 ## 操作 kube-kadm
