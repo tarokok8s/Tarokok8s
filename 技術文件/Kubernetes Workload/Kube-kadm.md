@@ -1,6 +1,35 @@
-# Kube-kadm 功能介紹
+# Kube-kadm 
 
+## 功能介紹
+1. kube-kadm 這個 Pod 為 Taroko K8s 管理 Console，可以透過 ssh 連進 kube-kadm 管理叢集與 Build Image，且不讓 K8s 入口憑證檔 (KubeConfig) 流出 K8s 叢集之外。
+2. kube-kadm 內建 Docker Registry，充當為整個叢集的 Image Registry。
+
+## 操作 kube-kadm
+* ssh 登入 kube-kadm
 ```
+$ ssh bigred@172.22.1.11 -p 22100
+```
+* 檢視叢集結點狀態
+```
+$ kubectl get no -owide
+NAME   STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE         KERNEL-VERSION   CONTAINER-RUNTIME
+k1m1   Ready    control-plane   18h   v1.29.3   172.22.1.11   <none>        Talos (v1.6.7)   6.1.82-talos     containerd://1.7.13
+k1w1   Ready    <none>          17h   v1.29.3   172.22.1.15   <none>        Talos (v1.6.7)   6.1.82-talos     containerd://1.7.13
+k1w2   Ready    <none>          17h   v1.29.3   172.22.1.16   <none>        Talos (v1.6.7)   6.1.82-talos     containerd://1.7.13
+```
+* 使用 podman 命令
+```
+$ sudo podman version
+Client:       Podman Engine
+Version:      4.8.3
+API Version:  4.8.3
+Go Version:   go1.21.9
+Built:        Sun Apr  7 03:34:14 2024
+OS/Arch:      linux/amd64
+```
+## 檢視 kube-kadm-dkreg.yaml
+```
+$ cat ~/wulin/wkload/kadm/kube-kadm-dkreg.yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
