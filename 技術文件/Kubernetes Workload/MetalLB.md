@@ -21,7 +21,7 @@ MetalLB 就是用來提供在地端實現網路 LoadBalancer 的方式。
 ![image](https://hackmd.io/_uploads/rJVoP6bXC.png)
 
 * 當外部想要找 K8s 內的某個服務，透過發送 ARP，由 Leader 節點用 MAC address 回應。外部主機就會將回應存在本地的 ARP table，下次就可以直接從本地取得。當請求已到達節點之後，節點就會再透過 kube-proxy 將請求轉到負載平衡的目標 Pod。
-> 所以其實還是透過 kube-proxy 來提供服務的負載平衡的功能，不是 MetalLB 本身
+> 所以其實是透過 kube-proxy 來提供服務的負載平衡的功能，不是 MetalLB 本身
 
 ## 組成元件：
 1. Controller : 以 deployment 的方式實現，用來監聽 Service 的變動、分配/回收 IP。
