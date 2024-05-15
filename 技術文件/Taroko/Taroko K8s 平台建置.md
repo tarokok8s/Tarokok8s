@@ -1,6 +1,6 @@
-# Taroko K8S 平台建置
+# Taroko K8s 平台建置
 
-## 下載 Taroko K8S 壓縮檔
+## 下載 Taroko K8s 壓縮檔
 
 下載連結[請點此](https://drive.google.com/file/d/1axT84N_10R-Ftw5QL9kaB9dXqOhCvM1z/view?usp=drive_link)
 
