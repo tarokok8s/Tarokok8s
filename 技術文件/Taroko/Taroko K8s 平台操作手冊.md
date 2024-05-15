@@ -8,6 +8,10 @@ $ cd VMTK2024v1.6.7
 ```
 ```
 $ k start
+"tkadm started"
+"k1m1 started"
+"k1w1 started"
+"k1w2 started"
 ```
 * 確認 VM 都已開機
 ```
@@ -40,6 +44,10 @@ $ cd VMTK2024v1.6.7
 * 將 Taroko K8s VM 都關機
 ```
 $ k stop
+"k1m1 stoped"
+"k1w1 stoped"
+"k1w2 stoped"
+"tkadm stoped"
 ```
 * 確認 VM 都已關機
 ```
@@ -70,6 +78,10 @@ $ cd VMTK2024v1.6.7
 * 將 Taroko K8s VM 都關機
 ```
 $ k stop
+"k1m1 stoped"
+"k1w1 stoped"
+"k1w2 stoped"
+"tkadm stoped"
 ```
 * 確認 VM 都已關機
 ```
