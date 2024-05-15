@@ -25,7 +25,7 @@ Taroko Kubernetes 是一個專為全端開發工程師和全端資料工程師�
 
 - 3.2. 下載連結壓縮檔[請點此](https://drive.google.com/file/d/1axT84N_10R-Ftw5QL9kaB9dXqOhCvM1z/view?usp=drive_link)
 
-- 3.3. 將壓縮檔解壓縮，詳細資訊[請點此](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%B9%B3%E5%8F%B0%E5%BB%BA%E7%BD%AE.md)
+- 3.3. 將壓縮檔解壓縮，詳細資訊[請點此](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8s%20%E5%B9%B3%E5%8F%B0%E5%BB%BA%E7%BD%AE.md)
 
 - 3.4. 開啟 cmd，進入 VMTK2024v1.6.7 目錄
 ```
@@ -95,8 +95,8 @@ ssh bigred@192.168.23.133
   - [VMware Workstation Player IaC 程式設計]()
 - Taroko K8s 基礎介紹與安裝
   - [Taroko K8s 基礎作業系統介紹](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/%E8%AA%8D%E8%AD%98%20Taroko%20K8s%20%E5%BA%95%E5%B1%A4%E9%81%8B%E4%BD%9C%E7%B3%BB%E7%B5%B1%20-%20Talos%20Linux.md)
-  - [Taroko K8s 基礎架構圖](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%9F%BA%E7%A4%8E%E6%9E%B6%E6%A7%8B%E5%9C%96.md)
-  - [Taroko K8s 平台建置](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8S%20%E5%B9%B3%E5%8F%B0%E5%BB%BA%E7%BD%AE.md)
+  - [Taroko K8s 基礎架構圖](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8s%20%E5%9F%BA%E7%A4%8E%E6%9E%B6%E6%A7%8B%E5%9C%96.md)
+  - [Taroko K8s 平台建置](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8s%20%E5%B9%B3%E5%8F%B0%E5%BB%BA%E7%BD%AE.md)
   - [Taroko K8s 平台操作手冊](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8s%20%E5%B9%B3%E5%8F%B0%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8A.md)
   - [Taroko K8s 平台類型選擇](https://github.com/tarokok8s/Tarokok8s/blob/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/Taroko/Taroko%20K8s%20%E5%B9%B3%E5%8F%B0%E9%A1%9E%E5%9E%8B%E9%81%B8%E6%93%87.md)
 - Full Stack DevOps 架構
