@@ -1,0 +1,16 @@
+version: "3"
+
+set: [errexit, nounset, pipefail]
+
+tasks:
+  install:
+    desc: Install kubectl
+    silent: true
+    cmds:
+      - bash "{{.ROOT_DIR}}/tools/kubectl/install.sh"
+
+  uninstall:
+    desc: Uninstall kubectl
+    silent: true
+    cmds:
+      - bash "{{.ROOT_DIR}}/tools/uninstall.sh" kubectl

@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: whoami-
+spec:
+  #podGC:
+  #  strategy: OnPodSuccess
+  entrypoint: whoami
+  templates:
+    - name: whoami
+      container:
+        image: 172.22.1.11:5000/alp.base:1.0.0-cicd
+        command:
+          - /bin/sh
+          - -c
+          - |
+            whoami
+            pwd
+            ls -al
+            cat /etc/os-release
+            hostname
+            hostname -i

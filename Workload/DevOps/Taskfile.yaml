@@ -1,0 +1,30 @@
+version: "3"
+
+set: [errexit, nounset, pipefail]
+
+includes:
+  images: images/Taskfile.yaml
+  tools: tools/Taskfile.yaml
+
+tasks:
+  default:
+    cmds:
+      - task -l
+    silent: true
+  
+  copy-kubeconfig:
+    desc: Copy kubeconfig from TKAdm
+    silent: true
+    cmds:
+      - sshpass -p bigred scp -o StrictHostKeyChecking=no bigred@172.22.1.254:/home/bigred/.kube/config ~/.kube
+
+  setup-argo-workflows:
+    desc: Setup Argo Workflows On Kubernetes
+    silent: true
+    vars:
+      VERSION: $(curl -s "https://api.github.com/repos/argoproj/argo-workflows/releases/latest" | jq -r .tag_name)
+      URL: https://github.com/argoproj/argo-workflows/releases/download/{{.VERSION}}/install.yaml
+    cmds:
+      - curl -sSL -o argo-workflows/{{.VERSION}}-install.yaml "{{.URL}}"
+      - kubectl apply -f argo-workflows/{{.VERSION}}-install.yaml
+      - task: tools:argo:install
