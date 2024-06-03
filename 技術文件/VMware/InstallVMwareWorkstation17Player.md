@@ -74,4 +74,4 @@
 
 ![](https://i.imgur.com/4jUYV3z.png)
 
-[回到技術文件/VMware](https://github.com/tarokok8s/Tarokok8s/tree/4f1bcefd97633b2b80cf7cf74de8b3480e7965ae/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/VMware)
+[回到技術文件/VMware](https://github.com/tarokok8s/Tarokok8s/tree/main/%E6%8A%80%E8%A1%93%E6%96%87%E4%BB%B6/VMware)
