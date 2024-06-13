@@ -51,7 +51,7 @@ spec:
                 name: git-cred
                 key: privateKey
       container:
-        image: 172.22.1.11:5000/alp.task:1.0.0-cicd
+        image: dkreg.kube-system:5000/alp.task:1.0.0-cicd
         command: [sh, -c]
         args: ["ls -al"]
         workingDir: /workdir/goweb
@@ -66,7 +66,7 @@ spec:
           - name: git-repo
             path: /workdir/goweb
       container:
-        image: 172.22.1.11:5000/alp.golang:1.0.0-cicd
+        image: dkreg.kube-system:5000/alp.golang:1.0.0-cicd
         securityContext:
           privileged: true
         command: [sh, -c]
@@ -85,7 +85,7 @@ spec:
       retryStrategy:
         limit: "3"
       container:
-        image: 172.22.1.11:5000/alp.task:1.0.0-cicd
+        image: dkreg.kube-system:5000/alp.task:1.0.0-cicd
         command: [sh, -c]
         args: ["task run; sleep 2; task test"]
         workingDir: /workdir/goweb
@@ -96,7 +96,7 @@ spec:
           - name: compile-output
             path: /workdir/goweb
       container:
-        image: 172.22.1.11:5000/alp.podman:1.0.0-cicd
+        image: dkreg.kube-system:5000/alp.podman:1.0.0-cicd
         securityContext:
           privileged: true
         command: [sh, -c]
@@ -109,7 +109,7 @@ spec:
           - name: compile-output
             path: /workdir/goweb
       container:
-        image: 172.22.1.11:5000/alp.kubectl:1.0.0-cicd
+        image: dkreg.kube-system:5000/alp.kubectl:1.0.0-cicd
         securityContext:
           privileged: true
         command: [sh, -c]

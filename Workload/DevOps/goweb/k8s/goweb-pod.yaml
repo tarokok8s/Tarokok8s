@@ -6,5 +6,5 @@ metadata:
   name: g1
 spec:
   containers:
-  - image: 172.22.1.11:5000/alp.goweb:1.0
+  - image: dkreg.kube-system:5000/alp.goweb:1.0
     name: g1

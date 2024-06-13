@@ -12,13 +12,13 @@ tasks:
     desc: Login to a container registry
     silent: true
     cmds:
-      - sudo podman login --tls-verify=false -u bigred -p bigred 172.22.1.11:5000 &>/dev/null
+      - sudo podman login --tls-verify=false -u bigred -p bigred dkreg.kube-system:5000 &>/dev/null
 
   logout:
     desc: Logout of a container registry
     silent: true
     cmds:
-      - sudo podman logout 172.22.1.11:5000 &>/dev/null
+      - sudo podman logout dkreg.kube-system:5000 &>/dev/null
 
   rmi-none:
     desc: Clear <none> tag images
@@ -30,7 +30,7 @@ tasks:
     desc: Get catalog from docker private registry
     silent: true
     cmds:
-      - curl -s -u bigred:bigred -X GET http://172.22.1.11:5000/v2/_catalog | jq
+      - curl -s -u bigred:bigred -X GET http://dkreg.kube-system:5000/v2/_catalog | jq
 
   build-all:
     desc: Build devops required images
@@ -116,7 +116,7 @@ tasks:
     silent: true
     vars:
       FROM_VER: '{{ default "1.0.0-cicd" .FROM_VER }}'
-      IMAGE: '172.22.1.11:5000/{{.IMAGE_NAME}}:{{.IMAGE_TAG}}'
+      IMAGE: 'dkreg.kube-system:5000/{{.IMAGE_NAME}}:{{.IMAGE_TAG}}'
     requires:
       vars: [IMAGE_NAME,IMAGE_TAG]
     cmds:
