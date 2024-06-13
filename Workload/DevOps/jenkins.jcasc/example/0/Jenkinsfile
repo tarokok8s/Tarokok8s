@@ -1,0 +1,19 @@
+pipeline {
+    agent { 
+        kubernetes {
+            inheritFrom 'mycicd'
+        }
+    }
+    stages {
+        stage ('whoami') {
+            steps {
+                sh 'whoami'
+                sh 'pwd'
+                sh 'ls -al'
+                sh 'cat /etc/os-release'
+                sh 'hostname'
+                sh 'hostname -i'
+            }
+        }
+    }
+}
