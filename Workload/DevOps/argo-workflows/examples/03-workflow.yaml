@@ -43,7 +43,7 @@ spec:
           - name: goweb
             path: /workdir/goweb
             git:
-              repo: ssh://bigred@kube-kadm.kube-system:22100/home/bigred/devops/goweb
+              repo: ssh://bigred@kadm.kube-system:22100/home/bigred/devops/goweb
               # insecureIgnoreHostKey disables SSH strict host key checking during the git clone
               insecureIgnoreHostKey: true
               # kubectl create secret generic git-cred --from-file=privateKey=/home/bigred/.ssh/id_rsa -n argo
