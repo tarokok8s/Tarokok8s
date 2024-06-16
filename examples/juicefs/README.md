@@ -1,5 +1,9 @@
 # README
 
+## Architecture
+
+![Juicefs Architecture](https://juicefs.com/docs/assets/images/juicefs-arch-52477e7677b23c870b72f08bb28c7ceb.svg)
+
 ## K8s install
 
 ```bash
@@ -52,7 +56,7 @@ XADD: 166666.67 requests per second, p50=0.159 msec
 
 ```bash
 # https://juicefs.com/docs/community/juicefs_on_k3s/#install-csi-driver
-$ wget -qO - https://raw.githubusercontent.com/juicedata/juicefs-csi-driver/master/deploy/k8s.yaml | sed 's|namespace: kube-system|namespace: s3-system|g' | kubectl apply -f -
+$ wget -qO - https://raw.githubusercontent.com/juicedata/juicefs-csi-driver/master/deploy/k8s.yaml | sed 's|namespace: kube-system|namespace: s3-system|g' | sed -E 's|image: juicedata\/juicefs-csi-driver:v[0-9]+\.[0-9]+\.[0-9]+|image: juicedata\/juicefs-csi-driver:v0.24.0|g' | kubectl apply -f -
 ```
 
 ## Deploy juicefs storageclass
