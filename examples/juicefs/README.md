@@ -26,8 +26,13 @@ $ kubectl apply -f redis-service.yaml
 ## Install CSI Driver
 
 ```bash
+# https://juicefs.com/docs/community/juicefs_on_k3s/#install-csi-driver
 $ wget -qO - https://raw.githubusercontent.com/juicedata/juicefs-csi-driver/master/deploy/k8s.yaml | sed 's|namespace: kube-system|namespace: s3-system|g' | kubectl apply -f
+```
 
+## Deploy juicefs storageclass
+
+```bash
 $ cat juicefs-storageclass.yaml
 ::
 apiVersion: v1
