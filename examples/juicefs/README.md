@@ -21,6 +21,31 @@ $ kubectl create ns s3-system
 $ sed 's|local-path|standard|g' redis-pvc.yaml | kubectl apply -f -
 $ kubectl apply -f redis-standalone-deployment.yaml
 $ kubectl apply -f redis-service.yaml
+
+# test redis
+$ redis=$(kubectl get pod -n s3-system -l app=redis -o name)
+$ kubectl exec -it -n s3-system $redis -- redis-benchmark -q -n 1000
+PING_INLINE: 200000.00 requests per second, p50=0.159 msec          
+PING_MBULK: 249999.98 requests per second, p50=0.095 msec
+SET: 249999.98 requests per second, p50=0.095 msec
+GET: 249999.98 requests per second, p50=0.095 msec
+INCR: 249999.98 requests per second, p50=0.087 msec
+LPUSH: 249999.98 requests per second, p50=0.087 msec
+RPUSH: 249999.98 requests per second, p50=0.087 msec
+LPOP: 249999.98 requests per second, p50=0.087 msec
+RPOP: 249999.98 requests per second, p50=0.095 msec
+SADD: 249999.98 requests per second, p50=0.095 msec
+HSET: 333333.34 requests per second, p50=0.095 msec
+SPOP: 333333.34 requests per second, p50=0.095 msec
+ZADD: 333333.34 requests per second, p50=0.087 msec
+ZPOPMIN: 333333.34 requests per second, p50=0.087 msec
+LPUSH (needed to benchmark LRANGE): 333333.34 requests per second, p50=0.087 msec
+LRANGE_100 (first 100 elements): 142857.14 requests per second, p50=0.175 msec
+LRANGE_300 (first 300 elements): 55555.56 requests per second, p50=0.463 msec
+LRANGE_500 (first 500 elements): 37037.04 requests per second, p50=0.703 msec
+LRANGE_600 (first 600 elements): 28571.43 requests per second, p50=0.887 msec
+MSET (10 keys): 166666.67 requests per second, p50=0.159 msec
+XADD: 166666.67 requests per second, p50=0.159 msec
 ```
 
 ## Install CSI Driver
