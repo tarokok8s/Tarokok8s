@@ -36,7 +36,7 @@ $ ../simple-decoder -data 2 -par 2 -out alpine.bk.iso alpine.iso
 $ kubectl create ns s3-system
 $ sed 's|local-path|standard|g' minio-distributed-statefulset.yaml | kubectl apply -f -
 $ kubectl apply -f minio-service.yaml
-$ kubectl apply -f minio-manage-pod
+$ kubectl apply -f minio-manage-pod.yaml
 ```
 
 ## Site Replication Overview
