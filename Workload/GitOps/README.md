@@ -9,7 +9,7 @@ wget -qO - https://raw.githubusercontent.com/tarokok8s/Tarokok8s/main/Workload/G
 進入 gitops 目錄
 
 ```
-cd ~/devops
+cd ~/gitops
 ```
 
 Bootstrap Argo CD on the cluster
