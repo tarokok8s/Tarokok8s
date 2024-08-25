@@ -1,8 +1,8 @@
 # GitOps
 
 ```bash
-git clone https://github.com/tarokok8s/Tarokok8s.git && sudo rm -rf .git && mv Tarokok8s/Workload/GitOps/ ~/gitops
-cd ~/gitops && git init && git add -A && git commit -m "init repo"
+wget -O - https://raw.githubusercontent.com/tarokok8s/Tarokok8s/main/Workload/GitOps/download | bash
 
+cd ~/gitops
 ./bootstrap.sh
 ```
