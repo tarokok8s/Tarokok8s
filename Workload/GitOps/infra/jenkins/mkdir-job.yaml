@@ -1,18 +1,25 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: jenkins-job-rmdir
+  name: jenkins-job-mkdir
   namespace: jenkins
+  annotations:
+    argocd.argoproj.io/hook: PreSync
 spec:
-  ttlSecondsAfterFinished: 60
+  ttlSecondsAfterFinished: 30
   template:
     spec:
       nodeSelector:
         node: jenkins
       containers:
       - name: mkdir
-        image: quay.io/flysangel/alpine:latest
-        command: ["rm", "-rf", "/opt/jenkins"]
+        image: quay.io/flysangel/library/alpine:latest
+        command:
+          - sh
+          - "-c"
+          - |
+            mkdir -p /opt/jenkins
+            chown -R 1000:1000 /opt/jenkins
         volumeMounts:
           - mountPath: /opt
             name: opt

@@ -178,7 +178,6 @@ spec:
         name: jenkins
         ports:
         - containerPort: 8080
-          hostPort: 8080
         - containerPort: 50000
         readinessProbe:
           failureThreshold: 24

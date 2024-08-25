@@ -4,14 +4,14 @@ metadata:
   name: workflow-controller-configmap
   namespace: argo
 # mc config host add mios http://miniosnsd.s3-system:9000 minio minio123
-# mc mb mios/argo-workflows
+# mc mb mios/workflows
 # kubectl -n argo create secret generic mios-cred --from-literal=accesskey=minio --from-literal=secretkey=minio123
 # archiveLogs will archive the main container logs as an artifact
 data:
   artifactRepository: |
     archiveLogs: true
     s3:
-      bucket: argo-workflows
+      bucket: workflows
       endpoint: miniosnsd.s3-system:9000
       insecure: true
       accessKeySecret:

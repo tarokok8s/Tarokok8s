@@ -11,27 +11,3 @@ tasks:
     cmds:
       - task -l
     silent: true
-
-  setup-argo-workflows:
-    desc: Setup Argo Workflows On Kubernetes
-    silent: true
-    vars:
-      VERSION: $(curl -s "https://api.github.com/repos/argoproj/argo-workflows/releases/latest" | jq -r .tag_name)
-      URL: https://github.com/argoproj/argo-workflows/releases/download/{{.VERSION}}/install.yaml
-    cmds:
-      - curl -sSL -o argo-workflows/{{.VERSION}}-install.yaml "{{.URL}}"
-      - kubectl apply -f argo-workflows/{{.VERSION}}-install.yaml
-      - task: tools:argo:install
-
-  setup-argo-cd:
-    desc: Setup Argo CD On Kubernetes
-    silent: true
-    vars:
-      VERSION: $(curl -s "https://api.github.com/repos/argoproj/argo-cd/releases/latest" | jq -r .tag_name)
-      URL: https://raw.githubusercontent.com/argoproj/argo-cd/{{.VERSION}}/manifests/core-install.yaml
-    cmds:
-      - curl -sSL -o argocd/{{.VERSION}}-core-install.yaml "{{.URL}}"
-      - sed -i s"|redis:|quay.io/flysangel/library/redis:|"g argocd/{{.VERSION}}-core-install.yaml
-      - sed -i s"|-alpine||"g argocd/{{.VERSION}}-core-install.yaml
-      - kubectl apply -n argocd -f argocd/{{.VERSION}}-core-install.yaml
-      - task: tools:argocd:install

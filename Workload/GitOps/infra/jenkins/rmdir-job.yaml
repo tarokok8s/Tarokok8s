@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: jenkins-job-mkdir
+  name: jenkins-job-rmdir
   namespace: jenkins
 spec:
   ttlSecondsAfterFinished: 60
@@ -11,13 +11,8 @@ spec:
         node: jenkins
       containers:
       - name: mkdir
-        image: quay.io/flysangel/alpine:latest
-        command:
-          - sh
-          - "-c"
-          - |
-            mkdir -p /opt/jenkins
-            chown -R 1000:1000 /opt/jenkins
+        image: quay.io/flysangel/library/alpine:latest
+        command: ["rm", "-rf", "/opt/jenkins"]
         volumeMounts:
           - mountPath: /opt
             name: opt
