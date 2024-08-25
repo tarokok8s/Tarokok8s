@@ -4,8 +4,4 @@ git clone https://github.com/tarokok8s/Tarokok8s.git &>/dev/null
 mv Tarokok8s/Workload/DevOps/ ~/devops
 rm -rf Tarokok8s
 
-cd ~/devops && git init &>/dev/null
-git add -A &>/dev/null
-git commit -m "init repo" &>/dev/null
-
 echo "Tarokok8s/Workload/DevOps successfully downloaded"

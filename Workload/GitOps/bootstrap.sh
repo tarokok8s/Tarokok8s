@@ -34,12 +34,4 @@ gunzip argo-linux-amd64.gz &>/dev/null
 sudo install -m 555 argo-linux-amd64 /usr/local/bin/argo
 rm argo-linux-amd64
 
-kubectl create secret generic git-cred \
-    --from-file=privateKey=/home/bigred/.ssh/id_rsa \
-    -n argo
-
-
-
-
-
 kubectl label "$(kubectl get node -o name | grep control)" "node=jenkins"
