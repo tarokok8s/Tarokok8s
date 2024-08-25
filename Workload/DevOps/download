@@ -7,3 +7,5 @@ rm -rf Tarokok8s
 cd ~/devops && git init &>/dev/null
 git add -A &>/dev/null
 git commit -m "init repo" &>/dev/null
+
+echo "Tarokok8s/Workload/DevOps successfully downloaded"

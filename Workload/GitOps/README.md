@@ -3,7 +3,7 @@
 下載 Tarokok8s/Workload/GitOps
 
 ```bash
-wget -O - https://raw.githubusercontent.com/tarokok8s/Tarokok8s/main/Workload/GitOps/download | bash
+wget -qO - https://raw.githubusercontent.com/tarokok8s/Tarokok8s/main/Workload/GitOps/download | bash
 ```
 
 進入 gitops 目錄
