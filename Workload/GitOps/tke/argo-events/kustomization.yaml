@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: argo-events
 
 resources:
+  - namespace.yaml
   - github.com/argoproj/argo-events/manifests/cluster-install?ref=v1.9.2
   - https://raw.githubusercontent.com/argoproj/argo-events/stable/manifests/install-validating-webhook.yaml
 
