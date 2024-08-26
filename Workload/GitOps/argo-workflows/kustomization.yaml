@@ -6,7 +6,7 @@ resources:
   - namespace.yaml
   - github.com/argoproj/argo-workflows/manifests/cluster-install?ref=v3.5.10
   - crb.yaml
-  - mios-cred.yaml
+  - minio-cred.yaml
 
 patches:
   - path: wf-controller-cm.yaml

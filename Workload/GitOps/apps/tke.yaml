@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: infra
+  name: tke
   namespace: argocd
 spec:
   syncPolicy:
@@ -13,7 +13,7 @@ spec:
         repoURL: ssh://bigred@kadm.kube-system:22100/home/bigred/gitops
         revision: HEAD
         directories:
-          - path: infra/*
+          - path: tke/*
   template:
     metadata:
       name: "{{.path.basename}}"
@@ -27,8 +27,6 @@ spec:
         server: https://kubernetes.default.svc
         namespace: "{{.path.basename}}"
       syncPolicy:
-        syncOptions:
-          - CreateNamespace=true
         # automated:
         #  allowEmpty: true
         #  prune: true

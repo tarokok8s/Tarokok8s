@@ -22,8 +22,6 @@ argocd login argocd-server.argocd --insecure --username admin --password Argo123
 argocd repocreds add ssh://bigred@kadm.kube-system:22100/home/bigred --ssh-private-key-path ~/.ssh/id_rsa
 argocd repo add ssh://bigred@kadm.kube-system:22100/home/bigred/gitops --insecure-skip-server-verification
 
-kubectl apply -f apps/argocd.yaml &>/dev/null
-
 mc mb -p mios/workflows
 
 # Install Argo Workflows CLI

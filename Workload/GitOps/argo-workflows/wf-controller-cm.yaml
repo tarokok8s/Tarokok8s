@@ -5,7 +5,7 @@ metadata:
   namespace: argo
 # mc config host add mios http://miniosnsd.s3-system:9000 minio minio123
 # mc mb mios/workflows
-# kubectl -n argo create secret generic mios-cred --from-literal=accesskey=minio --from-literal=secretkey=minio123
+# kubectl -n argo create secret generic minio-cred --from-literal=accesskey=minio --from-literal=secretkey=minio123
 # archiveLogs will archive the main container logs as an artifact
 data:
   artifactRepository: |
@@ -15,8 +15,8 @@ data:
       endpoint: miniosnsd.s3-system:9000
       insecure: true
       accessKeySecret:
-        name: mios-cred
+        name: minio-cred
         key: accesskey
       secretKeySecret:
-        name: mios-cred
+        name: minio-cred
         key: secretkey
