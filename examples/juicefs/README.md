@@ -22,9 +22,15 @@
 
 ```bash
 $ kubectl create ns s3-system
-$ sed 's|local-path|standard|g' redis-pvc.yaml | kubectl apply -f -
-$ kubectl apply -f redis-standalone-deployment.yaml
-$ kubectl apply -f redis-service.yaml
+
+# kind local-path name standard
+$ wget -qO - https://raw.githubusercontent.com/tarokok8s/Tarokok8s/main/examples/juicefs/redis.yaml | sed 's|local-path|standard|g' | kubectl apply -f -
+
+# not kind local-path
+$ wget -qO - https://raw.githubusercontent.com/tarokok8s/Tarokok8s/main/examples/juicefs/redis.yaml | kubectl apply -f -
+
+# wait
+$ kubectl wait -n s3-system pod -l app=redis --for=condition=Ready --timeout=360s
 
 # test redis
 $ redis=$(kubectl get pod -n s3-system -l app=redis -o name)
@@ -56,20 +62,16 @@ XADD: 166666.67 requests per second, p50=0.159 msec
 
 ```bash
 # https://juicefs.com/docs/community/juicefs_on_k3s/#install-csi-driver
-$ bash download.sh
-$ kubectl apply -f juicefs.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/tarokok8s/Tarokok8s/main/examples/juicefs/juicefs.yaml
 $ kubectl wait -n s3-system pod -l app=juicefs-csi-controller --for=condition=Ready --timeout=360s &&
     kubectl wait -n s3-system pod -l app=juicefs-csi-node --for=condition=Ready --timeout=360s &&
     kubectl wait -n s3-system pod -l app=juicefs-csi-dashboard --for=condition=Ready --timeout=360s
-
-$ kubectl apply -f redis.yaml &&
-    kubectl wait -n s3-system pod -l app=redis --for=condition=Ready --timeout=360s &&
 ```
 
 ## Deploy juicefs storageclass
 
 ```bash
-$ cat storageclass.yaml
+$ wget -qO - https://raw.githubusercontent.com/tarokok8s/Tarokok8s/main/examples/juicefs/storageclass.yaml
 ::
 apiVersion: v1
 kind: Secret
@@ -98,7 +100,7 @@ parameters:
   csi.storage.k8s.io/provisioner-secret-name: juicefs-minio-secret
   csi.storage.k8s.io/provisioner-secret-namespace: s3-system
 
-$ kubectl apply -f storageclass.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/tarokok8s/Tarokok8s/main/examples/juicefs/storageclass.yaml
 $ kubectl get pod -n s3-system
 NAME                                        READY   STATUS    RESTARTS       AGE
 pod/juicefs-csi-controller-0                4/4     Running   4 (5d5h ago)   9d
