@@ -29,7 +29,7 @@ $ kubectl apply -f redis-service.yaml
 # test redis
 $ redis=$(kubectl get pod -n s3-system -l app=redis -o name)
 $ kubectl exec -it -n s3-system $redis -- redis-benchmark -q -n 1000
-PING_INLINE: 200000.00 requests per second, p50=0.159 msec          
+PING_INLINE: 200000.00 requests per second, p50=0.159 msec
 PING_MBULK: 249999.98 requests per second, p50=0.095 msec
 SET: 249999.98 requests per second, p50=0.095 msec
 GET: 249999.98 requests per second, p50=0.095 msec
@@ -56,30 +56,32 @@ XADD: 166666.67 requests per second, p50=0.159 msec
 
 ```bash
 # https://juicefs.com/docs/community/juicefs_on_k3s/#install-csi-driver
-$ wget -qO - https://raw.githubusercontent.com/juicedata/juicefs-csi-driver/master/deploy/k8s.yaml |
-  sed 's|juicedata/juicefs-csi-driver|quay.io/flysangel/juicedata/juicefs-csi-driver|g' |
-  sed 's|juicedata/csi-dashboard|quay.io/flysangel/juicedata/csi-dashboard|g' |
-  sed 's|namespace: kube-system|namespace: s3-system|g' |
-  sed -E 's|replicas: [0-9]|replicas: 1|g' |
-  kubectl apply -f -
+$ bash download.sh
+$ kubectl apply -f juicefs.yaml
+$ kubectl wait -n s3-system pod -l app=juicefs-csi-controller --for=condition=Ready --timeout=360s &&
+    kubectl wait -n s3-system pod -l app=juicefs-csi-node --for=condition=Ready --timeout=360s &&
+    kubectl wait -n s3-system pod -l app=juicefs-csi-dashboard --for=condition=Ready --timeout=360s
+
+$ kubectl apply -f redis.yaml &&
+    kubectl wait -n s3-system pod -l app=redis --for=condition=Ready --timeout=360s &&
 ```
 
 ## Deploy juicefs storageclass
 
 ```bash
-$ cat juicefs-storageclass.yaml
+$ cat storageclass.yaml
 ::
 apiVersion: v1
 kind: Secret
 metadata:
-  namespace: s3-system # Notice
+  namespace: s3-system
   name: juicefs-minio-secret
 type: Opaque
 stringData:
   name: "data"
-  metaurl: "redis://redis.s3-system.svc.cluster.local/1" # Notice
+  metaurl: "redis://redis.s3-system.svc.cluster.local/1"
   storage: "minio"
-  bucket: "http://minio.s3-system.svc.cluster.local:9000/juicefs" # Notice
+  bucket: "http://minio.s3-system.svc.cluster.local:9000/juicefs"
   access-key: "minio"
   secret-key: "minio123"
 ---
@@ -92,11 +94,11 @@ reclaimPolicy: Retain
 volumeBindingMode: Immediate
 parameters:
   csi.storage.k8s.io/node-publish-secret-name: juicefs-minio-secret
-  csi.storage.k8s.io/node-publish-secret-namespace: s3-system # CSI Driver deploy on which namespace
+  csi.storage.k8s.io/node-publish-secret-namespace: s3-system
   csi.storage.k8s.io/provisioner-secret-name: juicefs-minio-secret
-  csi.storage.k8s.io/provisioner-secret-namespace: s3-system # CSI Driver deploy on which namespace
+  csi.storage.k8s.io/provisioner-secret-namespace: s3-system
 
-$ kubectl apply -f juicefs-storageclass.yaml
+$ kubectl apply -f storageclass.yaml
 $ kubectl get pod -n s3-system
 NAME                                        READY   STATUS    RESTARTS       AGE
 pod/juicefs-csi-controller-0                4/4     Running   4 (5d5h ago)   9d
@@ -109,4 +111,10 @@ pod/minio-1                                 1/1     Running   0              9d
 pod/minio-mg                                1/1     Running   0              9d
 pod/redis-79785c6794-h26g2                  1/1     Running   0              9d
 
+```
+
+## Test juicefs
+
+```bash
+$ kubectl apply -f test-mariadb.yaml
 ```

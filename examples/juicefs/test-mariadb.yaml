@@ -41,3 +41,15 @@ spec:
           persistentVolumeClaim:
             claimName: mariadb
       restartPolicy: Always
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: default
+  name: mariadb
+spec:
+  storageClassName: juicefs-minio
+  accessModes: ["ReadWriteMany"]
+  resources:
+    requests:
+      storage: 10Gi

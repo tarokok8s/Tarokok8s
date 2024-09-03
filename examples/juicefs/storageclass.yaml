@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  namespace: s3-system # Notice
+  namespace: s3-system
   name: juicefs-minio-secret
 type: Opaque
 stringData:
   name: "data"
-  metaurl: "redis://redis.s3-system.svc.cluster.local/1" # Notice
+  metaurl: "redis://redis.s3-system.svc.cluster.local/1"
   storage: "minio"
-  bucket: "http://minio.s3-system.svc.cluster.local:9000/juicefs" # Notice
+  bucket: "http://minio.s3-system.svc.cluster.local:9000/juicefs"
   access-key: "minio"
   secret-key: "minio123"
 ---
@@ -21,6 +21,6 @@ reclaimPolicy: Retain
 volumeBindingMode: Immediate
 parameters:
   csi.storage.k8s.io/node-publish-secret-name: juicefs-minio-secret
-  csi.storage.k8s.io/node-publish-secret-namespace: s3-system # CSI Driver deploy on which namespace
+  csi.storage.k8s.io/node-publish-secret-namespace: s3-system
   csi.storage.k8s.io/provisioner-secret-name: juicefs-minio-secret
-  csi.storage.k8s.io/provisioner-secret-namespace: s3-system # CSI Driver deploy on which namespace
+  csi.storage.k8s.io/provisioner-secret-namespace: s3-system
