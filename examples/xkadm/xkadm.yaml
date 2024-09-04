@@ -1,0 +1,79 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  namespace: kube-system
+  name: kube-kadm
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: kube-kadm
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    namespace: kube-system
+    name: kube-kadm
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: kube-system
+  name: kube-xkadm
+  #annotations:
+  #  metallb.universe.tf/loadBalancerIPs: 192.168.1.100
+spec:
+  selector:
+    app: kube-xkadm
+  ports:
+    - name: ssh
+      port: 22102
+      targetPort: 22
+      protocol: TCP
+  type: LoadBalancer
+  allocateLoadBalancerNodePorts: false
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: kube-system
+  name: kube-xkadm
+spec:
+  selector:
+    matchLabels:
+      app: kube-xkadm # has to match .spec.template.metadata.labels
+  replicas: 1 # by default is 1
+  template:
+    metadata:
+      labels:
+        app: kube-xkadm # has to match .spec.selector.matchLabels
+    spec:
+      serviceAccountName: kube-kadm
+      containers:
+        - name: kube-xkadm
+          image: quay.io/flysangel/image:x.kadm-v1.0.0
+          imagePullPolicy: Always
+          # run podman
+          securityContext:
+            privileged: true
+          ports:
+              # ssh
+            - hostPort: 22102
+              containerPort: 22
+              protocol: TCP
+          volumeMounts:
+            - name: dshm
+              mountPath: /dev/shm
+      volumes:
+        - name: dshm
+          emptyDir:
+            medium: Memory
+            sizeLimit: "2Gi"
+      restartPolicy: Always
+      nodeSelector:
+        node-role.kubernetes.io/control-plane: ""
+      tolerations:
+        - effect: NoSchedule
+          operator: Exists
