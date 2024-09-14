@@ -7,6 +7,10 @@ $ kubectl create ns s3-system
 
 # kind local-path name standard
 $ wget -qO - https://raw.githubusercontent.com/tarokok8s/Tarokok8s/main/examples/minio/minio.yaml | sed 's|local-path|standard|g' | kubectl apply -f -
+
+$ kubectl wait -n s3-system pod -l app=minio --for=condition=Ready --timeout=360s
+pod/minio-0 condition met
+pod/minio-1 condition met
 ```
 
 ## Site Replication Overview

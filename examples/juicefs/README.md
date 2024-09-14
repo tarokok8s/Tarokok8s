@@ -118,5 +118,18 @@ pod/redis-79785c6794-h26g2                  1/1     Running   0              9d
 ## Test juicefs
 
 ```bash
-$ kubectl apply -f test-mariadb.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/tarokok8s/Tarokok8s/main/examples/juicefs/test-mariadb.yaml
+$ kubectl wait -n default pod -l app=mariadb --for=condition=Ready --timeout=360s
+$ mariadb=$(kubectl get pod -n default -l app=mariadb -o name)
+$ kubectl exec -it -n default $mariadb -- mariadb -u root -proot -e 'show databases'
++--------------------+
+| Database           |
++--------------------+
+| dbtest             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+
 ```
