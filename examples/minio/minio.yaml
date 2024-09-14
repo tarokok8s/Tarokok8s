@@ -73,7 +73,8 @@ spec:
         name: minio-data0
       spec:
         storageClassName: local-path
-        accessModes: ["ReadWriteOnce"]
+        accessModes:
+          - ReadWriteOnce
         resources:
           requests:
             storage: 10Gi
@@ -81,7 +82,8 @@ spec:
         name: minio-data1
       spec:
         storageClassName: local-path
-        accessModes: ["ReadWriteOnce"]
+        accessModes:
+          - ReadWriteOnce
         resources:
           requests:
             storage: 10Gi
