@@ -22,6 +22,8 @@ kind: Service
 metadata:
   namespace: kube-system
   name: kube-xkadm
+  labels:
+    app: kube-xkadm
   #annotations:
   #  metallb.universe.tf/loadBalancerIPs: 192.168.1.100
 spec:
@@ -40,6 +42,8 @@ kind: Deployment
 metadata:
   namespace: kube-system
   name: kube-xkadm
+  labels:
+    app: kube-xkadm
 spec:
   selector:
     matchLabels:
@@ -50,16 +54,24 @@ spec:
       labels:
         app: kube-xkadm # has to match .spec.selector.matchLabels
     spec:
+      hostname: kube-xkadm
       serviceAccountName: kube-kadm
       containers:
         - name: kube-xkadm
           image: quay.io/flysangel/image:x.kadm-v1.0.0
-          imagePullPolicy: Always
+          imagePullPolicy: Always # Always, Nerver, IfNotPresent
           # run podman
           securityContext:
             privileged: true
+          resources:
+            requests:
+              cpu: "1"
+              memory: "512Mi"
+            limits:
+              cpu: "2"
+              memory: "4096Mi"
           ports:
-              # ssh
+            # ssh
             - hostPort: 22102
               containerPort: 22
               protocol: TCP
@@ -70,7 +82,7 @@ spec:
         - name: dshm
           emptyDir:
             medium: Memory
-            sizeLimit: "2Gi"
+            sizeLimit: 2Gi
       restartPolicy: Always
       nodeSelector:
         node-role.kubernetes.io/control-plane: ""

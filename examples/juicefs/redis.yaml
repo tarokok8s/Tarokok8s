@@ -8,6 +8,8 @@ kind: Service
 metadata:
   namespace: s3-system
   name: redis
+  labels:
+    app: redis
 spec:
   clusterIP: None
   selector:
@@ -21,6 +23,8 @@ kind: Deployment
 metadata:
   namespace: s3-system
   name: redis
+  labels:
+    app: redis
 spec:
   selector:
     matchLabels:
@@ -31,10 +35,18 @@ spec:
       labels:
         app: redis # has to match .spec.selector.matchLabels
     spec:
+      hostname: redis
       containers:
         - name: redis
           image: quay.io/flysangel/library/redis
-          imagePullPolicy: Always
+          imagePullPolicy: Always # Always, Nerver, IfNotPresent
+          resources:
+            requests:
+              cpu: "0.5"
+              memory: "256Mi"
+            limits:
+              cpu: "1"
+              memory: "1024Mi"
           volumeMounts:
             - name: redis
               mountPath: /data
@@ -51,7 +63,8 @@ metadata:
   name: redis
 spec:
   storageClassName: local-path
-  accessModes: ["ReadWriteOnce"]
+  accessModes:
+    - ReadWriteOnce
   resources:
     requests:
       storage: 10Gi

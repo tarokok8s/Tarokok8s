@@ -8,6 +8,8 @@ kind: Service
 metadata:
   namespace: s3-system
   name: minio
+  labels:
+    app: minio
 spec:
   selector:
     app: minio
@@ -29,6 +31,8 @@ kind: StatefulSet
 metadata:
   namespace: s3-system
   name: minio
+  labels:
+    app: minio
 spec:
   selector:
     matchLabels:
@@ -43,6 +47,14 @@ spec:
       containers:
         - name: minio
           image: quay.io/flysangel/minio/minio
+          imagePullPolicy: Always # Always, Nerver, IfNotPresent
+          resources:
+            requests:
+              cpu: "0.5"
+              memory: "256Mi"
+            limits:
+              cpu: "2"
+              memory: "2048Mi"
           args:
             # Change this according to No. of replicas, namespace and volumes
             - server
@@ -63,6 +75,8 @@ spec:
             timeoutSeconds: 10
             successThreshold: 1
             failureThreshold: 3
+          ports:
+            - containerPort: 9000
           volumeMounts:
             - name: minio-data0
               mountPath: /data0
@@ -88,15 +102,32 @@ spec:
           requests:
             storage: 10Gi
 ---
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   namespace: s3-system
-  name: minio-mg
+  name: minio-mgr
   labels:
-    app: minio-mg # service selector
+    app: minio-mgr
 spec:
-  containers:
-    - name: minio-mg
-      image: quay.io/flysangel/image:alpine.s3cli-v1.0.0
-  restartPolicy: Always
+  selector:
+    matchLabels:
+      app: minio-mgr # has to match .spec.template.metadata.labels
+  replicas: 1 # by default is 1
+  template:
+    metadata:
+      labels:
+        app: minio-mgr # has to match .spec.selector.matchLabels
+    spec:
+      hostname: minio-mgr
+      containers:
+        - name: minio-mgr
+          image: quay.io/flysangel/image:alpine.s3cli-v1.0.0
+          imagePullPolicy: Always # Always, Nerver, IfNotPresent
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "256m"
+            limits:
+              memory: "512Mi"
+              cpu: "512m"
