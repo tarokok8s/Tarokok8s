@@ -122,7 +122,7 @@ kind: Service
 metadata:
   labels:
     app: jenkins
-  name: jenkins
+  name: devops
   namespace: jenkins
 spec:
   ports:
