@@ -1,7 +1,26 @@
 #!/bin/bash
 
-git clone https://github.com/tarokok8s/Tarokok8s.git &>/dev/null
-mv Tarokok8s/Workload/DevOps/ ~/devops
-rm -rf Tarokok8s
+set -euo pipefail
 
-echo "Tarokok8s/Workload/DevOps successfully downloaded"
+REPO_URL="https://github.com/tarokok8s/Tarokok8s.git"
+TARGET_DIR="$HOME/devops"
+WORKLOAD_DIR="Workload/DevOps"
+
+git clone --depth 1 --no-checkout "$REPO_URL" &>/dev/null
+cd Tarokok8s || exit
+git sparse-checkout set "$WORKLOAD_DIR" &>/dev/null
+git checkout &>/dev/null
+mv "$WORKLOAD_DIR" "$TARGET_DIR"
+cd "$HOME" || exit
+rm -rf Tarokok8s &>/dev/null
+
+case "${1:-}" in
+    jenkins)
+        rm -rf "$TARGET_DIR/workflow-examples"
+        ;;
+    workflow)
+        rm -rf "$TARGET_DIR/jenkins-examples"
+        ;;
+esac
+
+echo "Tarokok8s DevOps successfully downloaded"
