@@ -1,6 +1,6 @@
 #!/bin/bash
 cred="jenkins:Jenkins12345"
-validateURL="http://jenkins.jenkins/pipeline-model-converter/validate"
+validateURL="http://devops.jenkins/pipeline-model-converter/validate"
 reponse=$(curl -s --user ${cred} -X POST -F "jenkinsfile=<Jenkinsfile" ${validateURL})
 echo "$reponse"
 if [ "Jenkinsfile successfully validated." == "$reponse" ]; then
