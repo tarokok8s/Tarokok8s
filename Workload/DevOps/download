@@ -13,6 +13,9 @@ git checkout &>/dev/null
 mv "$WORKLOAD_DIR" "$TARGET_DIR"
 cd "$HOME" || exit
 rm -rf Tarokok8s &>/dev/null
+rm -rf "$TARGET_DIR/tools"
+rm -rf "$TARGET_DIR/README.md"
+rm -rf "$TARGET_DIR/download"
 
 case "${1:-}" in
     jenkins)

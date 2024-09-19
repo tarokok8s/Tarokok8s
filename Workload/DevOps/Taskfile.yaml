@@ -4,7 +4,7 @@ set: [errexit, nounset, pipefail]
 
 includes:
   images: images/Taskfile.yaml
-  tools: tools/Taskfile.yaml
+  # tools: tools/Taskfile.yaml
 
 tasks:
   default:
