@@ -125,6 +125,6 @@ tasks:
         sudo podman build
         --build-arg FROM_VER={{.FROM_VER}}
         --format=docker --no-cache --force-rm --squash-all --tls-verify=false
-        -t {{.IMAGE}} ~/devops/images/{{.IMAGE_NAME}}/ &>/dev/null
-        && echo "{{.IMAGE}} image ok"
-      - sudo podman push --tls-verify=false {{.IMAGE}} &>/dev/null && echo "{{.IMAGE}} push ok"
+        -t {{.IMAGE}} ~/wulin/devops/images/{{.IMAGE_NAME}}/ &>/dev/null
+        && echo "{{.IMAGE}} build image ok"
+      - sudo podman push --tls-verify=false {{.IMAGE}} &>/dev/null && echo "{{.IMAGE}} push image ok"
