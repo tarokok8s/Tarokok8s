@@ -16,4 +16,4 @@ spec:
       containers:
         - name: c1
           image: dkreg.kube-system:5000/alp.cgi:latest
-          imagePullPolicy: Never
+          imagePullPolicy: Always
