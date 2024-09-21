@@ -7,54 +7,48 @@ $ kubectl apply -f https://raw.githubusercontent.com/tarokok8s/Tarokok8s/main/ex
 
 # wait
 $ kubectl wait -n kube-system pod -l app=kube-xkadm --for=condition=Ready --timeout=360s
+```
 
-# check k8s service
-# xkadm 提供兩種連線
-# 1. LoadBalancer
-# 2. HostPort (control-plane ip)
-$ kubectl get -n kube-system service kube-xkadm 
-NAME             TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                  AGE
-kube-xkadm       LoadBalancer   10.96.114.194   10.89.0.223   22102/TCP                16h
+## Create VcXsrv
+
+```bash
+# on kind
+$ sudo podman rmi quay.io/flysangel/image:x.vcxsrv-v1.0.0 &>/dev/null; sudo podman run -it --rm --net=host quay.io/flysangel/image:x.vcxsrv-v1.0.0
+Trying to pull quay.io/flysangel/image:x.vcxsrv-v1.0.0...
+Getting image source signatures
+Copying blob 8134e0a75af3 done   |
+Copying blob 27c049f4d39b done   |
+Copying blob 4abcf2066143 done   |
+Copying config 29a1db0bec done   |
+Writing manifest to image destination
+
+Pluse use windows cmd run
+powershell -command "irm http://172.20.0.154:5566/zip | iex"
 ```
 
 ## Windows connect
 
 ```bash
-# https://github.com/marchaesen/vcxsrv
-1. 下載 Windows X server 免安裝包 (VcXsrv)
-https://drive.google.com/drive/folders/1ZicyiUnAquiSjlk9eox-10_7RqJ1D9Xn
+# cmd
+> powershell -command "irm http://172.20.0.154:5566/zip | iex"
 
-2. 解壓縮 VcXsrv.zip
-3. 編輯 env.bat，修改 serverIp 為 LoadBalancer ip 或 control-plane ip，其餘不變
-@echo off
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----       2024/9/19  下午 11:39                bin
+d-----       2024/9/19  下午 11:39                hack
+d-----       2024/9/19  下午 11:39                terminal
+d-----       2024/9/19  下午 11:39                vcxsrv
+-a----       2024/9/19  下午 11:38            120 env.bat
+-a----       2024/8/25  上午 11:57            628 runTerminal.bat
+-a----       2024/9/19  下午 09:39            451 startLxqt.bat
+-a----       2024/9/19  下午 11:17            611 stopLxqt.bat
+-a----       2024/9/19  下午 09:39            269 testEnv.bat
 
-:: ssh profile
-set username=bigred
-set password=bigred
-set serverIp=172.20.0.157
-set serverPort=22102
+> cd %userprofile%\VcXsrv
 
-4. 點擊 testEnv.bat
-testEnv ok
+# start
+> startLxqt.bat
 
-等候  2 秒後，請按任何一個鍵繼續 ...
-
-5. 點擊 startLxqt.bat
-
-# xkadm
-$ kubectl get node
-kubectl get node
-NAME                 STATUS   ROLES           AGE   VERSION
-c30c-control-plane   Ready    control-plane   30h   v1.30.4
-c30c-worker          Ready    <none>          30h   v1.30.4
-c30c-worker2         Ready    <none>          30h   v1.30.4
-
-$ cat ~/.kube/config
-apiVersion: v1
-clusters:
-  - cluster:
-      certificate-authority-data:
-...
-
-
+# stop
+> stopLxqt.bat
 ```

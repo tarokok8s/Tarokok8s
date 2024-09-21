@@ -76,9 +76,14 @@ spec:
               containerPort: 22
               protocol: TCP
           volumeMounts:
+            - name: wulin
+              mountPath: /home/bigred/wulin
             - name: dshm
               mountPath: /dev/shm
       volumes:
+        - name: wulin
+          hostPath:
+            path: /var/tmp/wulin
         - name: dshm
           emptyDir:
             medium: Memory
