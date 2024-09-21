@@ -1,0 +1,60 @@
+pipeline {
+    agent { 
+        kubernetes {
+            inheritFrom 'mycicd'
+            yamlFile 'cicd-pod.yaml'
+            defaultContainer 'p1'
+        }
+    }
+    environment {
+        OLD_IMG_TAG = 'dkreg.kube-system:5000/alp.cgi:latest'
+        NEW_IMG_TAG = "dkreg.kube-system:5000/alp.cgi:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
+    }
+    stages {
+        stage ('build and push image') {
+            steps {
+                sh 'sudo podman login --tls-verify=false -u bigred -p bigred dkreg.kube-system:5000'
+                sh 'sudo podman build --tls-verify=false -t "${NEW_IMG_TAG}" .'
+                sh 'sudo podman push --tls-verify=false "${NEW_IMG_TAG}"'        
+            }
+        }
+        stage ('deploy canary') {
+            when { branch 'canary' }
+            steps {
+                container('k1') {
+                    sh 'kubectl get ns prod || kubectl create ns prod'
+                    sh "sed -i 's|c1-pod|c1-canary|' c1-pod.yaml"
+                    sh "sed -i 's|${OLD_IMG_TAG}|${NEW_IMG_TAG}|' c1-pod.yaml"
+                    sh 'kubectl -n prod apply -f c1-svc.yaml'
+                    sh 'kubectl -n prod apply -f c1-pod.yaml'
+                }
+            }
+        }
+        stage ('deploy prod') {
+            when { branch 'master' }
+            steps {
+                container('k1') {
+                    sh 'kubectl get ns prod || kubectl create ns prod'
+                    sh "sed -i 's|c1-pod|c1-prod|' c1-pod.yaml"
+                    sh "sed -i 's|${OLD_IMG_TAG}|${NEW_IMG_TAG}|' c1-pod.yaml"
+                    sh 'kubectl -n prod apply -f c1-svc.yaml'
+                    sh 'kubectl -n prod apply -f c1-pod.yaml'
+                }
+            }
+        }
+        stage ('deploy dev') {
+            when {
+                not { branch 'master' }
+                not { branch 'canary' }
+            }
+            steps {
+                container('k1') {
+                    sh 'kubectl get ns ${BRANCH_NAME} || kubectl create ns ${BRANCH_NAME}'
+                    sh "sed -i 's|c1-pod|c1-dev|' c1-pod.yaml"
+                    sh "sed -i 's|${OLD_IMG_TAG}|${NEW_IMG_TAG}|' c1-pod.yaml"
+                    sh 'kubectl -n ${BRANCH_NAME} apply -f c1-pod.yaml'
+                }
+            }
+        }
+    }
+}
