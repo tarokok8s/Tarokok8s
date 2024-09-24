@@ -3,10 +3,10 @@
 ## Apply xkadm
 
 ```bash
-$ kubectl apply -f https://raw.githubusercontent.com/tarokok8s/Tarokok8s/main/examples/xkadm/xkadm.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/tarokok8s/Tarokok8s/main/examples/xadm/xadm.yaml
 
 # wait
-$ kubectl wait -n kube-system pod -l app=kube-xkadm --for=condition=Ready --timeout=360s
+$ kubectl wait -n kube-system pod -l app=kube-xadm --for=condition=Ready --timeout=360s
 ```
 
 ## Create VcXsrv
@@ -24,6 +24,8 @@ Writing manifest to image destination
 
 Pluse use windows cmd run
 powershell -command "irm http://172.20.0.154:5566/zip | iex"
+
+# 300 秒後會自動停止，請不要中斷
 ```
 
 ## Windows connect
@@ -44,11 +46,12 @@ d-----       2024/9/19  下午 11:39                vcxsrv
 -a----       2024/9/19  下午 11:17            611 stopLxqt.bat
 -a----       2024/9/19  下午 09:39            269 testEnv.bat
 
-> cd %userprofile%\VcXsrv
+> explorer %userprofile%\VcXsrv
 
+# 執行 runTerminal.bat
 # start
-> startLxqt.bat
+PS > startLxqt.bat
 
 # stop
-> stopLxqt.bat
+PS > stopLxqt.bat
 ```
