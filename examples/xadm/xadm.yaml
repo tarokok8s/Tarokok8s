@@ -76,7 +76,7 @@ spec:
           name: dshm
       hostname: kube-xadm
       nodeSelector:
-        node-role.kubernetes.io/xadm: ""
+        app: xadm
       restartPolicy: Always
       serviceAccountName: kube-kadm
       tolerations:
