@@ -16,7 +16,8 @@ spec:
         app: kube-xadm # has to match .spec.selector.matchLabels
     spec:
       nodeSelector:
-        node-role.kubernetes.io/xadm: ""
+        #node-role.kubernetes.io/xadm: ""
+        app: xadm
       tolerations:
         - effect: NoSchedule
           operator: Exists
