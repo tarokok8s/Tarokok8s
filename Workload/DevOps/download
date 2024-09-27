@@ -14,6 +14,7 @@ mv "$WORKLOAD_DIR" "$TARGET_DIR"
 cd "$HOME" || exit
 rm -rf Tarokok8s &>/dev/null
 rm -rf "$TARGET_DIR/tools"
+rm -rf "$TARGET_DIR/alp.cgi"
 rm -rf "$TARGET_DIR/README.md"
 rm -rf "$TARGET_DIR/download"
 
