@@ -6,13 +6,14 @@ REPO_URL="https://github.com/tarokok8s/Tarokok8s.git"
 TARGET_DIR="$HOME/wulin/devops"
 WORKLOAD_DIR="Workload/DevOps"
 
+cd "$HOME/wulin/"
 git clone --depth 1 --no-checkout "$REPO_URL" &>/dev/null
-cd Tarokok8s || exit
+cd "$HOME/wulin/Tarokok8s" || exit
 git sparse-checkout set "$WORKLOAD_DIR" &>/dev/null
 git checkout &>/dev/null
 mv "$WORKLOAD_DIR" "$TARGET_DIR"
 cd "$HOME" || exit
-rm -rf Tarokok8s &>/dev/null
+rm -rf "$HOME/wulin/Tarokok8s" &>/dev/null
 rm -rf "$TARGET_DIR/tools"
 rm -rf "$TARGET_DIR/alp.cgi"
 rm -rf "$TARGET_DIR/README.md"
