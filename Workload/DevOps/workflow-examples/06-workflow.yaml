@@ -160,8 +160,7 @@ spec:
         parameters:
           - name: NS
             default: "default"
-            description: >-
-              請確認是否部署至 K1
+            description: 請輸入要部署至哪個 namespace
       outputs:
         parameters:
           - name: NS
