@@ -4,10 +4,10 @@ The local-path storageclass needs to be installed first.
 
 ## Install open-webui
 ```
-$ curl https://raw.githubusercontent.com/tarokok8s/Tarokok8s/refs/heads/main/Workload/open-webui/open-webui.yaml | kubectl apply -f -
+$ kubectl apply -f https://raw.githubusercontent.com/tarokok8s/Tarokok8s/refs/heads/main/Workload/open-webui/open-webui.yaml
 ```
 ```
-$ kubectl -n ollama get all
+$ kubectl -n llm-system get all
 NAME                        READY   STATUS    RESTARTS   AGE
 pod/ollama-0                1/1     Running   0          8m9s
 pod/webui-cf476874b-d4jkj   2/2     Running   0          8m9s
