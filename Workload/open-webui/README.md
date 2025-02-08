@@ -25,3 +25,5 @@ replicaset.apps/webui-cf476874b   1         1         1       8m9s
 NAME                      READY   AGE
 statefulset.apps/ollama   1/1     8m9s
 ```
+## 登入 Open WebUI
+![image](https://github.com/user-attachments/assets/06417e30-1822-4ed8-a1f7-155711a099b7)
