@@ -26,15 +26,15 @@ metadata:
   name: webui
   namespace: llm-system
 spec:
-#  allocateLoadBalancerNodePorts: false
+  allocateLoadBalancerNodePorts: false
   ports:
   - port: 3000
     protocol: TCP
     targetPort: 8080
   selector:
     app: webui
-  type: NodePort
-#  type: LoadBalancer
+#  type: NodePort
+  type: LoadBalancer
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
