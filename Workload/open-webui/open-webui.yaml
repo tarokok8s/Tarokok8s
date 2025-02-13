@@ -71,7 +71,7 @@ spec:
         - bash
         - -c
         - |
-          until ls ${SQLITE_DB}; do
+          until ls ${SQLITE_DB} &>/dev/null; do
             sleep 3
           done
           sleep 3
@@ -174,7 +174,7 @@ spec:
           ollama serve &
           sleep 5 # wait ollama server
           for model in echo $(echo ${PULL_MODELS} | tr ',' ' '); do
-            ollama list | grep -q ${model} || \
+            ollama list | grep -q ${model} ||
               ollama pull ${model}
           done
         env:
