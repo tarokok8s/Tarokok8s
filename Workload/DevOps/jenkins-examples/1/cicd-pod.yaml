@@ -1,6 +1,6 @@
 spec:
   containers:
   - name: p1
-    image: dkreg.kube-system:5000/alp.podman:1.0.0-cicd
+    image: dkreg.taroko:5000/alp.podman:1.0.0-cicd
     securityContext:
       privileged: true

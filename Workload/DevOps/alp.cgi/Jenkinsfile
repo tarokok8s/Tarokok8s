@@ -7,13 +7,13 @@ pipeline {
         }
     }
     environment {
-        OLD_IMG_TAG = 'dkreg.kube-system:5000/alp.cgi:latest'
-        NEW_IMG_TAG = "dkreg.kube-system:5000/alp.cgi:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
+        OLD_IMG_TAG = 'dkreg.taroko:5000/alp.cgi:latest'
+        NEW_IMG_TAG = "dkreg.taroko:5000/alp.cgi:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
     }
     stages {
         stage ('build and push image') {
             steps {
-                sh 'sudo podman login --tls-verify=false -u bigred -p bigred dkreg.kube-system:5000'
+                sh 'sudo podman login --tls-verify=false -u bigred -p bigred dkreg.taroko:5000'
                 sh 'sudo podman build --tls-verify=false -t "${NEW_IMG_TAG}" .'
                 sh 'sudo podman push --tls-verify=false "${NEW_IMG_TAG}"'        
             }
